@@ -63,7 +63,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand hidden-lg" href="<?php echo home_url(); ?>/">Menu</a>   
+				<a class="navbar-brand hidden-lg hidden-md" href="<?php echo home_url(); ?>/">Menu</a>   
 			</div>
             <nav class="collapse navbar-collapse" role="navigation">
               <?php 

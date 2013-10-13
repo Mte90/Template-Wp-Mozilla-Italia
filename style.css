@@ -122,6 +122,10 @@ margin-top:-10px !important;
 	width: 160px !important;
 }
 
+.row {
+	margin:0;
+}
+
 /* Navigation previous/next articles */
 
 nav#navposts {
@@ -330,7 +334,6 @@ article .date {
   float: left;
   background: #8d82d8;
   background: -moz-linear-gradient(-45deg,  #8d82d8 54%, #c4c4ec 100%);
-  background: -webkit-gradient(linear, left top, right bottom, color-stop(54%,#8d82d8), color-stop(100%,#c4c4ec));
   background: -webkit-linear-gradient(-45deg,  #8d82d8 54%,#c4c4ec 100%);
   background: -o-linear-gradient(-45deg,  #8d82d8 54%,#c4c4ec 100%);
   background: -ms-linear-gradient(-45deg,  #8d82d8 54%,#c4c4ec 100%);
@@ -365,6 +368,14 @@ article > footer {
   font-size: 12px;
 }
 
+@media (max-width: 1200px) {
+	#sociallinks img {
+		width: 32px;
+	}
+	.head h1 {
+		font-size:50px !important;
+	}
+}
 
 /* Large desktop */
 @media (max-width: 1200px) {
@@ -417,6 +428,9 @@ article > footer {
   footer#mainfooter {
     text-align: center;
   }  
+  #sociallinks {
+  display:none;
+  }
 }
  
 /* Landscape phones and down */
