@@ -48,10 +48,10 @@
         <h2>associazione italiana<br/>supporto e traduzione mozilla</h2>
       </div>  
       <div id="sociallinks">
-        <span class="sociallogo"><a href="https://www.facebook.com/mozillaitalia"><img src="<?php bloginfo('template_directory'); ?>/img/facebook.png" alt="logo Facebook" title="Seguici su Facebook" /></a></span>
-        <span class="sociallogo"><a href="https://twitter.com/mozillaitalia"><img src="<?php bloginfo('template_directory'); ?>/img/twitter.png" alt="logo Twitter" title="Seguici su Twitter" /></a></span>
-        <span class="sociallogo"><a href="https://plus.google.com/communities/102357154385350664356"><img src="<?php bloginfo('template_directory'); ?>/img/googleplus.png" alt="logo Google+" title="Seguici su Google+" /></a></span>
-        <span class="sociallogo"><a href="/feed"><img src="<?php bloginfo('template_directory'); ?>/img/rss.png" alt="logo Google+" title="Seguici con gli RSS" /></a></span>
+        <a href="https://www.facebook.com/mozillaitalia"><img src="<?php bloginfo('template_directory'); ?>/img/facebook.png" alt="logo Facebook" title="Seguici su Facebook" /></a>
+        <a href="https://twitter.com/mozillaitalia"><img src="<?php bloginfo('template_directory'); ?>/img/twitter.png" alt="logo Twitter" title="Seguici su Twitter" /></a></span>
+        <a href="https://plus.google.com/communities/102357154385350664356"><img src="<?php bloginfo('template_directory'); ?>/img/googleplus.png" alt="logo Google+" title="Seguici su Google+" /></a>
+        <a href="/feed"><img src="<?php bloginfo('template_directory'); ?>/img/rss.png" alt="logo Google+" title="Seguici con gli RSS" /></a></span>
       </div>     
     </header>
     <div class="navbar navbar-default" role="navigation">
@@ -63,7 +63,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand visible-sm" href="<?php echo home_url(); ?>/">Menu</a>   
+				<a class="navbar-brand hidden-lg" href="<?php echo home_url(); ?>/">Menu</a>   
 			</div>
             <nav class="collapse navbar-collapse" role="navigation">
               <?php 

@@ -50,7 +50,7 @@
         interval: 6000
       });
     </script>
-  </div><!-- class="container" -->
+  </div>
 
 </body>
 </html>
