@@ -1,6 +1,6 @@
 <section role="important">
-  <div class="row-fluid" id="hometop">
-    <div class="span8" id="introhome">
+  <div class="row" id="hometop">
+    <div class="col-md-8" id="introhome">
       <h2>Associazione Italiana Supporto e Traduzione Mozilla</h2>
       <p>Siamo un'associazione senza fini di lucro che si dedica alla traduzione italiana, al supporto e alla promozione 
       dei prodotti della <a href="http://www.mozilla.org/">Mozilla Foundation</a> e derivati.</p>
@@ -8,7 +8,7 @@
       <p>Vi raccomandiamo di consultare i <a href="http://forum.mozillaitalia.org/">nostri forum</a>, per chiedere informazioni 
       o segnalare problemi su tutto ciò che pubblichiamo e, ovviamente, anche per offrire aiuto.</p>
     </div>
-    <div class="span4">
+    <div class="col-md-4">
       <div id="boxcollabora">
         <h2>Collabora con noi</h2>      
         <p>Entra a far parte della nostra comunità in modo attivo!</p>
@@ -18,8 +18,8 @@
       </div>
     </div>
   </div>
-  <div class="row-fluid">
-    <div class="span8">
+  <div class="row">
+    <div class="col-md-8">
       <?php
         $sticky = get_option('sticky_posts');
         rsort($sticky);
@@ -74,14 +74,14 @@
           }
           echo '                  
           </div>
-          <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-          <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+          <a class="carousel-control left" href="#myCarousel" data-slide="prev"><span class="icon-prev"></span></a>
+          <a class="carousel-control right" href="#myCarousel" data-slide="next"><span class="icon-next"></span></a>
         </div>
         ';      
         }    
       ?>
     </div>
-    <div class="span4">
+    <div class="col-md-4">
       <h2>Download?</h2>
       <p>Studiare pulsanti mozilla.org per Firefox</p>
     </div>

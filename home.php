@@ -3,8 +3,8 @@
   // I want the carousel+collaborate box only on the first page
   if (!is_paged()) get_template_part('templates/hometop', 'home'); 
 ?>
-<div class="row-fluid">
-  <div class="span8">
+<div class="row">
+  <div class="col-lg-8">
     <section role="main">
       <?php
         // Exclude sticky posts

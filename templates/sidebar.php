@@ -1,11 +1,13 @@
-<div class="span4">
+<div class="col-md-4">
   <aside>
     <h3>Cerca nel sito</h3>
     <form class="form-search" id="searchform" method="get" action="">
-      <div class="input-append">
-        <input type="text" name="s" id="s" class="search-query">
-        <button type="submit" class="btn">Cerca</button>
-      </div>      
+		<div class="input-group">
+			<input type="text" name="s" id="s" class="form-control">
+			<span class="input-group-btn">
+				<button type="submit" class="btn btn-default">Cerca</button>
+			</span>  
+		</div>
     </form>
     <h3>Aggiornamenti da Twitter</h3>
     <div id="twitter-updates">

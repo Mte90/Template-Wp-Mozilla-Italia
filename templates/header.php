@@ -4,12 +4,11 @@
     <meta charset="<?php bloginfo('charset'); ?>">
     <title><?php bloginfo('name'); ?> <?php wp_title(); ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">    
-    <meta name="author" content="Francesco Lodolo">    
+    <meta name="author" content="Francesco Lodolo & Daniele Scasciafratte">    
     <meta name="generator" content="WordPress <?php bloginfo('version'); ?>" /> <!-- leave this for stats -->    
 
     <!-- Bootstrap -->
     <link href="<?php bloginfo('template_directory'); ?>/assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="<?php bloginfo('template_directory'); ?>/assets/css/bootstrap-responsive.min.css" rel="stylesheet">
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -44,35 +43,35 @@
   <div class="container" id="bodycontainer">        
     <a href="http://www.mozilla.org/" id="tabzilla">mozilla</a>
     <header class="site-header" role="banner">
-      <hgroup>
+      <div class="head">
         <h1><a href="<?php echo get_settings('home'); ?>/">Mozilla Italia</a></h1>
         <h2>associazione italiana<br/>supporto e traduzione mozilla</h2>
-      </hgroup>  
+      </div>  
       <div id="sociallinks">
         <span class="sociallogo"><a href="https://www.facebook.com/mozillaitalia"><img src="<?php bloginfo('template_directory'); ?>/img/facebook.png" alt="logo Facebook" title="Seguici su Facebook" /></a></span>
         <span class="sociallogo"><a href="https://twitter.com/mozillaitalia"><img src="<?php bloginfo('template_directory'); ?>/img/twitter.png" alt="logo Twitter" title="Seguici su Twitter" /></a></span>
         <span class="sociallogo"><a href="https://plus.google.com/communities/102357154385350664356"><img src="<?php bloginfo('template_directory'); ?>/img/googleplus.png" alt="logo Google+" title="Seguici su Google+" /></a></span>
+        <span class="sociallogo"><a href="/feed"><img src="<?php bloginfo('template_directory'); ?>/img/rss.png" alt="logo Google+" title="Seguici con gli RSS" /></a></span>
       </div>     
     </header>
-    <nav role="navigation">
-      <div class="navbar">
-        <div class="navbar-inner">
-          <div class="container">
-            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </a>
-            <a class="brand" href="#">Menu</a>        
+    <div class="navbar navbar-default" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand visible-sm" href="<?php echo home_url(); ?>/">Menu</a>   
+			</div>
+            <nav class="collapse navbar-collapse" role="navigation">
               <?php 
                 wp_nav_menu( array(
-                  'container' => 'div',
-                  'container_class' => 'nav-collapse collapse',
-                  'menu_class' => 'nav',
+                  'menu_class' => 'nav nav-pills',
                   'theme_location' => 'principale'
                 ));
-              ?>        
-          </div>
-        </div>
-      </div>
-    </nav>
+              ?>       
+			</nav>
+       </div>
+    </div>

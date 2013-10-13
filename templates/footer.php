@@ -1,8 +1,8 @@
     <footer id="mainfooter" role="footer">
-      <div class="row-fluid" id="linkfooter">
-        <div id="logofooter" class="span3">
+      <div class="row" id="linkfooter">
+        <div id="logofooter" class="col-md-3">
         </div>
-        <div id="linksito" class="span3">
+        <div id="linksito" class="col-md-3">
           <h2>mozillaitalia.org</h2>
           <ul>
             <li>Hosting offerto da <a href="http://www.mozilla.org/">Mozilla Foundation</a></li>
@@ -15,7 +15,7 @@
             <li>
           </ul>
         </div>
-        <div id="linkassociazione" class="span2">
+        <div id="linkassociazione" class="col-md-2">
           <h2>associazione</h2>
           <ul>
             <li><a href="/associazione/statuto/">Statuto</a></li>
@@ -24,7 +24,7 @@
             <li><a href="/associazione/informativa-sulla-privacy/">Privacy</a></li>
           </ul>
         </div>
-        <div id="linesterni" class="span2">
+        <div id="linesterni" class="col-md-2">
           <h2>link utili</h2>
           <ul>
             <li><a href="https://addons.mozilla.org/">AMO - addons.mozilla.org</a></li>
@@ -32,8 +32,8 @@
             <li><a href="https://www.mozilla.org/it/about/manifesto/">Mozilla Manifesto</a></li>
         </div>
       </div>
-      <div class="row-fluid">
-        <div class="span12">
+      <div class="row">
+        <div class="col-md-12">
           <p class="text-center">
             Associazione Italiana Supporto e Traduzione Mozilla - <acronym title="Codice Fiscale">CF</acronym>: IT02359160344
           </p>
