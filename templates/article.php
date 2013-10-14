@@ -1,4 +1,4 @@
-<article <?php post_class(); ?>>
+<article <?php post_class('flag'); ?>>
   <header class="entry-header">
     <div class="date">
       <span class="month"><?php the_time('M'); ?></span> 

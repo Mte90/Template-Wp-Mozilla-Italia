@@ -6,7 +6,7 @@
           <h2>mozillaitalia.org</h2>
           <ul>
             <li>Hosting offerto da <a href="http://www.mozilla.org/">Mozilla Foundation</a></li>
-            <li>Sviluppo web <a href="http://www.lodolo.it/">Francesco Lodolo</a></li>
+            <li>Sviluppo web <a href="http://www.lodolo.it/">Francesco Lodolo</a> e <a href="http://www.mte90.net/">Daniele Scasciafratte</a></li>
             <li><a href="/riconoscimenti">Riconoscimenti</a></li>
             <li>
               <a rel="license" id="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.it">

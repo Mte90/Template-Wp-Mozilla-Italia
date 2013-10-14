@@ -26,12 +26,11 @@
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
     <link href="//www.mozilla.org/tabzilla/media/css/tabzilla.css" rel="stylesheet" />
-
+    
     <?php 
       wp_enqueue_script('jquery');
       wp_head();       
     ?>  
-
     <script> 
       jQuery(document).ready(function() {
           jQuery('.dropdown > a').append('<b class="caret"></b>').dropdown();

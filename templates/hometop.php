@@ -81,9 +81,13 @@
         }    
       ?>
     </div>
-    <div class="col-md-4">
-      <h2>Download?</h2>
-      <p>Studiare pulsanti mozilla.org per Firefox</p>
+    <div class="download-button col-md-4">
+      <h2>Download</h2>
+      <a href="//affiliates.mozilla.org/link/banner/27550"><img src="//affiliates.mozilla.org/media/uploads/banners/f5eeeddc214ed8ef15e48bc80e1f53b0da4f0574.png" alt="Download: Fast, Fun, Awesome" /></a>
+      <a href="//affiliates.mozilla.org/link/banner/46920"><img src="//affiliates.mozilla.org/media/uploads/banners/a47240839834560ba213f2ed7df82697d6bc7766.png" alt="Download Aurora" /></a>
+      <a href="//affiliates.mozilla.org/link/banner/46917"><img src="//affiliates.mozilla.org/media/uploads/banners/11780af1fc7070bf3173ae707cf83cc2bad6216d.png" alt="Thunderbird" /></a>
+      <a href="//affiliates.mozilla.org/link/banner/46918"><img src="//affiliates.mozilla.org/media/uploads/banners/a923c2ca8aaa6e720053fcc0ac4a51f520d0cabc.png" alt="Android" /></a>
+      <a href="//affiliates.mozilla.org/link/banner/46919"><img src="//affiliates.mozilla.org/media/uploads/banners/21667af8d37e6766384104cdd8f96ee479e56221.png" alt="Firefox OS" /></a>
     </div>
   </div>
 </section>
