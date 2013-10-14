@@ -40,6 +40,7 @@
     </script>
   </head>
 <body>  
+ <div class="wrapper">
   <div class="container" id="bodycontainer">        
     <a href="http://www.mozilla.org/" id="tabzilla">mozilla</a>
     <header class="site-header" role="banner">
