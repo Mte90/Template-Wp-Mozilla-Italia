@@ -3,8 +3,8 @@ Theme Name: Mozilla Italia
 Theme URI: http://www.mozillaitalia.org
 Description: Mozilla Italia's theme
 Version: 1.0
-Author: Francesco Lodolo
-Author URI: http://www.flod.org
+Author: Francesco Lodolo, Daniele Scasciafratte
+Author URI: http://www.flod.org - http://www.mte90.net
 */
 
 body {
@@ -25,7 +25,13 @@ body {
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 	font-family: "Open Sans",Helvetica,Arial,sans-serif;
 }
-
+ul.nav li.dropdown:hover > ul.dropdown-menu{
+    display: block;    
+}
+/* fix space */
+.navbar .dropdown-menu {
+ margin-top: 0px;
+}
 section {
   background: #FAF5FE;
   padding: 0 10px;
@@ -157,6 +163,7 @@ margin-top:-10px !important;
 
 .widget {
 	margin-bottom:15px;
+	margin-top:20px;
 }
 /* Navigation previous/next articles */
 
@@ -215,6 +222,10 @@ nav#navposts span a:hover{
 
 .navbar {
 	min-height:40px;
+	background:#fff;
+	border-left:0;
+	border-right:0;
+	border-radius:0;
 }
 
 .navbar > .container .navbar-brand {
@@ -274,9 +285,10 @@ header.site-header h2 {
 }
 
 div#sociallinks {
+  float: right;
   position: absolute;
-  top: 120px;
   right: 20px;
+  top: 4px;
 }
 
 /* Website Footer */
@@ -341,6 +353,13 @@ div#boxcollabora {
   border-radius: 6px;  
   background-position: 0 -251px;  
   box-shadow: 0px 0px 6px rgba(214, 191, 19, 0.48);
+  margin-top:10px;
+}
+
+#boxcollabora h2 {
+	color:#000;
+	margin-left:0;
+	margin-top:10px;
 }
 
 div#introhome p {
@@ -364,6 +383,7 @@ div#introhome h2 {
 
 article {
 	border-top:1px solid #CCCCCC;
+	margin-top:20px;
 }
 
 article .date {
@@ -374,12 +394,6 @@ article .date {
   color: #FFF;
   float: left;
   background: #8d82d8;
-  background: -moz-linear-gradient(-45deg,  #8d82d8 54%, #c4c4ec 100%);
-  background: -webkit-linear-gradient(-45deg,  #8d82d8 54%,#c4c4ec 100%);
-  background: -o-linear-gradient(-45deg,  #8d82d8 54%,#c4c4ec 100%);
-  background: -ms-linear-gradient(-45deg,  #8d82d8 54%,#c4c4ec 100%);
-  background: linear-gradient(135deg,  #8d82d8 54%,#c4c4ec 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8d82d8', endColorstr='#c4c4ec',GradientType=1 );
   border-radius: 6px;
   box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.48);
 }

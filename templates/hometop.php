@@ -1,21 +1,12 @@
 <section role="important">
   <div class="row" id="hometop">
-    <div class="col-md-8" id="introhome">
+    <div class="col-md-12" id="introhome">
       <h2>Associazione Italiana Supporto e Traduzione Mozilla</h2>
       <p>Siamo un'associazione senza fini di lucro che si dedica alla traduzione italiana, al supporto e alla promozione 
       dei prodotti della <a href="http://www.mozilla.org/">Mozilla Foundation</a> e derivati.</p>
       <p>In questo sito è raccolto il nostro lavoro: software, traduzioni, articoli e guide.</p>
       <p>Vi raccomandiamo di consultare i <a href="http://forum.mozillaitalia.org/">nostri forum</a>, per chiedere informazioni 
       o segnalare problemi su tutto ciò che pubblichiamo e, ovviamente, anche per offrire aiuto.</p>
-    </div>
-    <div class="col-md-4">
-      <div id="boxcollabora">
-        <h2>Collabora con noi</h2>      
-        <p>Entra a far parte della nostra comunità in modo attivo!</p>
-        <p>Scopri <a href="/come-iniziare/">in che modo puoi collaborare</a> 
-           oppure diventa <a href="/associazione/domanda-adesione/">socio sostenitore</a>, 
-           aiutandoci a portare avanti le nostre attività di <strong>traduzione e supporto</strong>.</p>
-      </div>
     </div>
   </div>
   <div class="row">
