@@ -98,8 +98,49 @@ value="<?php esc_attr_e( $options['fs_esr-build_linux_64'] ); ?>" />
 </tr>
 <tr valign="top"><th scope="row">Build Mac OSX</th>
 <td>
-<input id="moz_ita_dl[fs-mac_osx]" class="regular-text" type="text" name="moz_ita_dl[fs_esr-mac_osx]" 
+<input id="moz_ita_dl[fs_esr-mac_osx]" class="regular-text" type="text" name="moz_ita_dl[fs_esr-mac_osx]" 
 value="<?php esc_attr_e( $options['fs_esr-mac_osx'] ); ?>" />
+</td>
+</tr>
+</table>
+
+<h3>Thunderbird Stable</h3>
+
+<table class="form-table">
+<tr valign="top"><th scope="row">Installer Windows</th>
+<td>
+<input id="moz_ita_dl[fs-installer_windows]" class="regular-text" type="text" name="moz_ita_dl[ts-installer_windows]" 
+value="<?php esc_attr_e( $options['ts-installer_windows'] ); ?>" />
+</td>
+</tr>
+<tr valign="top"><th scope="row">Zip Windows</th>
+<td>
+<input id="moz_ita_dl[ts-zip_windows]" class="regular-text" type="text" name="moz_ita_dl[ts-zip_windows]" 
+value="<?php esc_attr_e( $options['ts-zip_windows'] ); ?>" />
+</td>
+</tr>
+<tr valign="top"><th scope="row">Build Linux</th>
+<td>
+<input id="moz_ita_dl[ts-build_linux]" class="regular-text" type="text" name="moz_ita_dl[ts-build_linux]" 
+value="<?php esc_attr_e( $options['ts-build_linux'] ); ?>" />
+</td>
+</tr>
+<tr valign="top"><th scope="row">Build Linux x64</th>
+<td>
+<input id="moz_ita_dl[ts-build_linux_64]" class="regular-text" type="text" name="moz_ita_dl[ts-build_linux_64]" 
+value="<?php esc_attr_e( $options['ts-build_linux_64'] ); ?>" />
+</td>
+</tr>
+<tr valign="top"><th scope="row">Build Mac OSX</th>
+<td>
+<input id="moz_ita_dl[ts-mac_osx]" class="regular-text" type="text" name="moz_ita_dl[ts-mac_osx]" 
+value="<?php esc_attr_e( $options['ts-mac_osx'] ); ?>" />
+</td>
+</tr>
+<tr valign="top"><th scope="row">Langpack Multipiattaforma</th>
+<td>
+<input id="moz_ita_dl[ts-langpack]" class="regular-text" type="text" name="moz_ita_dl[ts-langpack]" 
+value="<?php esc_attr_e( $options['ts-langpack'] ); ?>" />
 </td>
 </tr>
 </table>
