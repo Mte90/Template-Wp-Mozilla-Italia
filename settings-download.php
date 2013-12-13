@@ -23,7 +23,9 @@ $_REQUEST['settings-updated'] = false;
 <?php if ( false !== $_REQUEST['settings-updated'] ) : ?>
 <div class="updated fade"><p><strong><?php _e( 'Download salvati', 'moz-ita' ); ?></strong></p></div>
 <?php endif; ?>
- 
+ <p class="submit">
+<input type="submit" class="button-primary load-software" value="<?php _e( 'Carica le versioni', 'moz-ita' ); ?>" />
+</p>
 <form method="post" action="options.php">
 <?php settings_fields( 'moz_ita_dl_group' ); ?>
 <?php $options = get_option( 'moz_ita_dl' ); ?>
@@ -74,32 +76,32 @@ $_REQUEST['settings-updated'] = false;
 <table class="form-table">
 <tr valign="top"><th scope="row">Installer Windows</th>
 <td>
-<input id="moz_ita_dl[fs_esr-installer_windows]" class="regular-text" type="text" name="moz_ita_dl[fs_esr-installer_windows]" value="<?php esc_attr_e( $options['fs_esr-installer_windows'] ); ?>" />
-<input id="moz_ita_dl[fs_esr-installer_windows-size]" class="small-text" type="text" name="moz_ita_dl[fs_esr-installer_windows-size]" value="<?php esc_attr_e( $options['fs_esr-installer_windows-size'] ); ?>" />
+<input id="moz_ita_dl[f_esr-installer_windows]" class="regular-text" type="text" name="moz_ita_dl[f_esr-installer_windows]" value="<?php esc_attr_e( $options['f_esr-installer_windows'] ); ?>" />
+<input id="moz_ita_dl[f_esr-installer_windows-size]" class="small-text" type="text" name="moz_ita_dl[f_esr-installer_windows-size]" value="<?php esc_attr_e( $options['f_esr-installer_windows-size'] ); ?>" />
 </td>
 </tr>
 <tr valign="top"><th scope="row">Zip Windows</th>
 <td>
-<input id="moz_ita_dl[fs_esr-zip_windows]" class="regular-text" type="text" name="moz_ita_dl[fs_esr-zip_windows]" value="<?php esc_attr_e( $options['fs_esr-zip_windows'] ); ?>" />
-<input id="moz_ita_dl[fs_esr-zip_windows-size]" class="small-text" type="text" name="moz_ita_dl[fs_esr-zip_windows-size]" value="<?php esc_attr_e( $options['fs_esr-zip_windows-size'] ); ?>" />
+<input id="moz_ita_dl[f_esr-zip_windows]" class="regular-text" type="text" name="moz_ita_dl[f_esr-zip_windows]" value="<?php esc_attr_e( $options['f_esr-zip_windows'] ); ?>" />
+<input id="moz_ita_dl[f_esr-zip_windows-size]" class="small-text" type="text" name="moz_ita_dl[f_esr-zip_windows-size]" value="<?php esc_attr_e( $options['f_esr-zip_windows-size'] ); ?>" />
 </td>
 </tr>
 <tr valign="top"><th scope="row">Build Linux</th>
 <td>
-<input id="moz_ita_dl[fs_esr-build_linux]" class="regular-text" type="text" name="moz_ita_dl[fs_esr-build_linux]" value="<?php esc_attr_e( $options['fs_esr-build_linux'] ); ?>" />
-<input id="moz_ita_dl[fs_esr-build_linux-size]" class="small-text" type="text" name="moz_ita_dl[fs_esr-build_linux-size]" value="<?php esc_attr_e( $options['fs_esr-build_linux-size'] ); ?>" />
+<input id="moz_ita_dl[f_esr-build_linux]" class="regular-text" type="text" name="moz_ita_dl[f_esr-build_linux]" value="<?php esc_attr_e( $options['f_esr-build_linux'] ); ?>" />
+<input id="moz_ita_dl[f_esr-build_linux-size]" class="small-text" type="text" name="moz_ita_dl[f_esr-build_linux-size]" value="<?php esc_attr_e( $options['f_esr-build_linux-size'] ); ?>" />
 </td>
 </tr>
 <tr valign="top"><th scope="row">Build Linux x64</th>
 <td>
-<input id="moz_ita_dl[fs_esr-build_linux_64]" class="regular-text" type="text" name="moz_ita_dl[fs_esr-build_linux_64]" value="<?php esc_attr_e( $options['fs_esr-build_linux_64'] ); ?>" />
-<input id="moz_ita_dl[fs_esr-build_linux_64-size]" class="small-text" type="text" name="moz_ita_dl[fs_esr-build_linux_64-size]" value="<?php esc_attr_e( $options['fs_esr-build_linux_64-size'] ); ?>" />
+<input id="moz_ita_dl[f_esr-build_linux_64]" class="regular-text" type="text" name="moz_ita_dl[f_esr-build_linux_64]" value="<?php esc_attr_e( $options['f_esr-build_linux_64'] ); ?>" />
+<input id="moz_ita_dl[f_esr-build_linux_64-size]" class="small-text" type="text" name="moz_ita_dl[f_esr-build_linux_64-size]" value="<?php esc_attr_e( $options['f_esr-build_linux_64-size'] ); ?>" />
 </td>
 </tr>
 <tr valign="top"><th scope="row">Build Mac OSX</th>
 <td>
-<input id="moz_ita_dl[fs_esr-mac_osx]" class="regular-text" type="text" name="moz_ita_dl[fs_esr-mac_osx]" value="<?php esc_attr_e( $options['fs_esr-mac_osx'] ); ?>" />
-<input id="moz_ita_dl[fs_esr-mac_osx-size]" class="small-text" type="text" name="moz_ita_dl[fs_esr-mac_osx-size]" value="<?php esc_attr_e( $options['fs_esr-mac_osx-size'] ); ?>" />
+<input id="moz_ita_dl[f_esr-mac_osx]" class="regular-text" type="text" name="moz_ita_dl[f_esr-mac_osx]" value="<?php esc_attr_e( $options['f_esr-mac_osx'] ); ?>" />
+<input id="moz_ita_dl[f_esr-mac_osx-size]" class="small-text" type="text" name="moz_ita_dl[f_esr-mac_osx-size]" value="<?php esc_attr_e( $options['f_esr-mac_osx-size'] ); ?>" />
 </td>
 </tr>
 </table>
@@ -144,11 +146,113 @@ $_REQUEST['settings-updated'] = false;
 </td>
 </tr>
 </table>
+
+<h3>Thunderbird ESR</h3>
+
+<table class="form-table">
+<tr valign="top"><th scope="row">Installer Windows</th>
+<td>
+<input id="moz_ita_dl[t_esr-installer_windows]" class="regular-text" type="text" name="moz_ita_dl[t_esr-installer_windows]" value="<?php esc_attr_e( $options['t_esr-installer_windows'] ); ?>" />
+<input id="moz_ita_dl[t_esr-installer_windows-size]" class="small-text" type="text" name="moz_ita_dl[t_esr-installer_windows-size]" value="<?php esc_attr_e( $options['t_esr-installer_windows-size'] ); ?>" />
+</td>
+</tr>
+<tr valign="top"><th scope="row">Zip Windows</th>
+<td>
+<input id="moz_ita_dl[t_esr-zip_windows]" class="regular-text" type="text" name="moz_ita_dl[t_esr-zip_windows]" value="<?php esc_attr_e( $options['t_esr-zip_windows'] ); ?>" />
+<input id="moz_ita_dl[t_esr-zip_windows-size]" class="small-text" type="text" name="moz_ita_dl[t_esr-zip_windows-size]" value="<?php esc_attr_e( $options['t_esr-zip_windows-size'] ); ?>" />
+</td>
+</tr>
+<tr valign="top"><th scope="row">Build Linux</th>
+<td>
+<input id="moz_ita_dl[t_esr-build_linux]" class="regular-text" type="text" name="moz_ita_dl[t_esr-build_linux]" value="<?php esc_attr_e( $options['t_esr-build_linux'] ); ?>" />
+<input id="moz_ita_dl[t_esr-build_linux-size]" class="small-text" type="text" name="moz_ita_dl[t_esr-build_linux-size]" value="<?php esc_attr_e( $options['t_esr-build_linux-size'] ); ?>" />
+</td>
+</tr>
+<tr valign="top"><th scope="row">Build Linux x64</th>
+<td>
+<input id="moz_ita_dl[t_esr-build_linux_64]" class="regular-text" type="text" name="moz_ita_dl[t_esr-build_linux_64]" value="<?php esc_attr_e( $options['t_esr-build_linux_64'] ); ?>" />
+<input id="moz_ita_dl[t_esr-build_linux_64-size]" class="small-text" type="text" name="moz_ita_dl[t_esr-build_linux_64-size]" value="<?php esc_attr_e( $options['t_esr-build_linux_64-size'] ); ?>" />
+</td>
+</tr>
+<tr valign="top"><th scope="row">Build Mac OSX</th>
+<td>
+<input id="moz_ita_dl[t_esr-mac_osx]" class="regular-text" type="text" name="moz_ita_dl[t_esr-mac_osx]" value="<?php esc_attr_e( $options['t_esr-mac_osx'] ); ?>" />
+<input id="moz_ita_dl[t_esr-mac_osx-size]" class="small-text" type="text" name="moz_ita_dl[t_esr-mac_osx-size]" value="<?php esc_attr_e( $options['t_esr-mac_osx-size'] ); ?>" />
+</td>
+</tr>
+</table>
+
+<h3>Seamonkey</h3>
+
+<table class="form-table">
+<tr valign="top"><th scope="row">Installer Windows</th>
+<td>
+<input id="moz_ita_dl[s-installer_windows]" class="regular-text" type="text" name="moz_ita_dl[s-installer_windows]" value="<?php esc_attr_e( $options['s-installer_windows'] ); ?>" />
+<input id="moz_ita_dl[s-installer_windows-size]" class="small-text" type="text" name="moz_ita_dl[s-installer_windows-size]" value="<?php esc_attr_e( $options['s-installer_windows-size'] ); ?>" />
+</td>
+</tr>
+<tr valign="top"><th scope="row">Zip Windows</th>
+<td>
+<input id="moz_ita_dl[s-zip_windows]" class="regular-text" type="text" name="moz_ita_dl[s-zip_windows]" value="<?php esc_attr_e( $options['s-zip_windows'] ); ?>" />
+<input id="moz_ita_dl[s-zip_windows-size]" class="small-text" type="text" name="moz_ita_dl[s-zip_windows-size]" value="<?php esc_attr_e( $options['s-zip_windows-size'] ); ?>" />
+</td>
+</tr>
+<tr valign="top"><th scope="row">Build Linux</th>
+<td>
+<input id="moz_ita_dl[s-build_linux]" class="regular-text" type="text" name="moz_ita_dl[s-build_linux]" value="<?php esc_attr_e( $options['s-build_linux'] ); ?>" />
+<input id="moz_ita_dl[s-build_linux-size]" class="small-text" type="text" name="moz_ita_dl[s-build_linux-size]" value="<?php esc_attr_e( $options['s-build_linux-size'] ); ?>" />
+</td>
+</tr>
+<tr valign="top"><th scope="row">Build Linux x64</th>
+<td>
+<input id="moz_ita_dl[s-build_linux_64]" class="regular-text" type="text" name="moz_ita_dl[s-build_linux_64]" value="<?php esc_attr_e( $options['s-build_linux_64'] ); ?>" />
+<input id="moz_ita_dl[s-build_linux_64-size]" class="small-text" type="text" name="moz_ita_dl[s-build_linux_64-size]" value="<?php esc_attr_e( $options['s-build_linux_64-size'] ); ?>" />
+</td>
+</tr>
+<tr valign="top"><th scope="row">Build Mac OSX</th>
+<td>
+<input id="moz_ita_dl[s-mac_osx]" class="regular-text" type="text" name="moz_ita_dl[s-mac_osx]" value="<?php esc_attr_e( $options['s-mac_osx'] ); ?>" />
+<input id="moz_ita_dl[s-mac_osx-size]" class="small-text" type="text" name="moz_ita_dl[s-mac_osx-size]" value="<?php esc_attr_e( $options['s-mac_osx-size'] ); ?>" />
+</td>
+</tr>
+<tr valign="top"><th scope="row">Langpack Multipiattaforma</th>
+<td>
+<input id="moz_ita_dl[s-langpack]" class="regular-text" type="text" name="moz_ita_dl[s-langpack]" value="<?php esc_attr_e( $options['s-langpack'] ); ?>" />
+<input id="moz_ita_dl[s-langpack-size]" class="small-text" type="text" name="moz_ita_dl[s-langpack-size]" value="<?php esc_attr_e( $options['s-langpack-size'] ); ?>" />
+</td>
+</tr>
+</table>
+
+<h3>Lightning</h3>
+
+<table class="form-table">
+<tr valign="top"><th scope="row">Build Windows</th>
+<td>
+<input id="moz_ita_dl[l-zip_windows]" class="regular-text" type="text" name="moz_ita_dl[l-zip_windows]" value="<?php esc_attr_e( $options['l-zip_windows'] ); ?>" />
+<input id="moz_ita_dl[l-zip_windows-size]" class="small-text" type="text" name="moz_ita_dl[l-zip_windows-size]" value="<?php esc_attr_e( $options['l-zip_windows-size'] ); ?>" />
+</td>
+</tr>
+<tr valign="top"><th scope="row">Build Linux</th>
+<td>
+<input id="moz_ita_dl[l-build_linux]" class="regular-text" type="text" name="moz_ita_dl[l-build_linux]" value="<?php esc_attr_e( $options['l-build_linux'] ); ?>" />
+<input id="moz_ita_dl[l-build_linux-size]" class="small-text" type="text" name="moz_ita_dl[l-build_linux-size]" value="<?php esc_attr_e( $options['l-build_linux-size'] ); ?>" />
+</td>
+</tr>
+<tr valign="top"><th scope="row">Build Mac OSX</th>
+<td>
+<input id="moz_ita_dl[l-mac_osx]" class="regular-text" type="text" name="moz_ita_dl[lr-mac_osx]" value="<?php esc_attr_e( $options['l-mac_osx'] ); ?>" />
+<input id="moz_ita_dl[l-mac_osx-size]" class="small-text" type="text" name="moz_ita_dl[l-mac_osx-size]" value="<?php esc_attr_e( $options['l-mac_osx-size'] ); ?>" />
+</td>
+</tr>
+</table>
  
 <p class="submit">
 <input type="submit" class="button-primary" value="<?php _e( 'Salva Download', 'moz-ita' ); ?>" />
 </p>
 </form>
+<p class="submit">
+<input type="submit" class="button-primary load-software" value="<?php _e( 'Carica le versioni', 'moz-ita' ); ?>" />
+</p>
 </div>
 <?php
 }
