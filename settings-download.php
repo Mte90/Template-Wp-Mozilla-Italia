@@ -17,6 +17,17 @@ if ( ! isset( $_REQUEST['settings-updated'] ) )
 $_REQUEST['settings-updated'] = false;
  
 ?>
+
+<script>
+jQuery( document ).ready(function() {
+	jQuery( ".load-software" ).click(function() {
+		jQuery.getJSON( "http://svn.mozilla.org/libs/product-details/json/firefox_versions.json?callback=?", function( data ) {
+			console.log(data);
+		});
+	});
+});
+</script>
+
 <div class="wrap">
 <?php screen_icon(); echo "<h2>" . get_current_theme() . " Download</h2>"; ?>
  
