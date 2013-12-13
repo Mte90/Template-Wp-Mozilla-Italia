@@ -27,48 +27,79 @@ $_REQUEST['settings-updated'] = false;
 <form method="post" action="options.php">
 <?php settings_fields( 'moz_ita_dl_group' ); ?>
 <?php $options = get_option( 'moz_ita_dl' ); ?>
-	<h3>Firefox Stable</h3>
+	
+<h3>Firefox Stable</h3>
+
 <table class="form-table">
-<tr valign="top"><th scope="row">Versione</th>
-<td>
-<input id="moz_ita_dl[versione]" class="regular-text" type="text" name="moz_ita_dl[versione]" 
-value="<?php esc_attr_e( $options['versione'] ); ?>" />
-</td>
-</tr>
 <tr valign="top"><th scope="row">Installer Windows</th>
 <td>
-<input id="moz_ita_dl[installer_windows]" class="regular-text" type="text" name="moz_ita_dl[installer_windows]" 
-value="<?php esc_attr_e( $options['installer_windows'] ); ?>" />
+<input id="moz_ita_dl[fs-installer_windows]" class="regular-text" type="text" name="moz_ita_dl[fs-installer_windows]" 
+value="<?php esc_attr_e( $options['fs-installer_windows'] ); ?>" />
 </td>
 </tr>
 <tr valign="top"><th scope="row">Zip Windows</th>
 <td>
-<input id="moz_ita_dl[zip_windows]" class="regular-text" type="text" name="moz_ita_dl[zip_windows]" 
-value="<?php esc_attr_e( $options['zip_windows'] ); ?>" />
+<input id="moz_ita_dl[fs-zip_windows]" class="regular-text" type="text" name="moz_ita_dl[fs-zip_windows]" 
+value="<?php esc_attr_e( $options['fs-zip_windows'] ); ?>" />
 </td>
 </tr>
 <tr valign="top"><th scope="row">Build Linux</th>
 <td>
-<input id="moz_ita_dl[build_linux]" class="regular-text" type="text" name="moz_ita_dl[build_linux]" 
-value="<?php esc_attr_e( $options['build_linux'] ); ?>" />
+<input id="moz_ita_dl[fs-build_linux]" class="regular-text" type="text" name="moz_ita_dl[fs-build_linux]" 
+value="<?php esc_attr_e( $options['fs-build_linux'] ); ?>" />
 </td>
 </tr>
 <tr valign="top"><th scope="row">Build Linux x64</th>
 <td>
-<input id="moz_ita_dl[build_linux_64]" class="regular-text" type="text" name="moz_ita_dl[build_linux_64]" 
-value="<?php esc_attr_e( $options['build_linux_64'] ); ?>" />
+<input id="moz_ita_dl[fs-build_linux_64]" class="regular-text" type="text" name="moz_ita_dl[fs-build_linux_64]" 
+value="<?php esc_attr_e( $options['fs-build_linux_64'] ); ?>" />
 </td>
 </tr>
 <tr valign="top"><th scope="row">Build Mac OSX</th>
 <td>
-<input id="moz_ita_dl[mac_osx]" class="regular-text" type="text" name="moz_ita_dl[mac_osx]" 
-value="<?php esc_attr_e( $options['mac_osx'] ); ?>" />
+<input id="moz_ita_dl[fs-mac_osx]" class="regular-text" type="text" name="moz_ita_dl[fs-mac_osx]" 
+value="<?php esc_attr_e( $options['fs-mac_osx'] ); ?>" />
 </td>
 </tr>
 <tr valign="top"><th scope="row">Langpack Multipiattaforma</th>
 <td>
-<input id="moz_ita_dl[langpack]" class="regular-text" type="text" name="moz_ita_dl[langpack]" 
-value="<?php esc_attr_e( $options['langpack'] ); ?>" />
+<input id="moz_ita_dl[fs-langpack]" class="regular-text" type="text" name="moz_ita_dl[fs-langpack]" 
+value="<?php esc_attr_e( $options['fs-langpack'] ); ?>" />
+</td>
+</tr>
+</table>
+
+<h3>Firefox ESR</h3>
+
+<table class="form-table">
+<tr valign="top"><th scope="row">Installer Windows</th>
+<td>
+<input id="moz_ita_dl[fs_esr-installer_windows]" class="regular-text" type="text" name="moz_ita_dl[fs_esr-installer_windows]" 
+value="<?php esc_attr_e( $options['fs_esr-installer_windows'] ); ?>" />
+</td>
+</tr>
+<tr valign="top"><th scope="row">Zip Windows</th>
+<td>
+<input id="moz_ita_dl[fs_esr-zip_windows]" class="regular-text" type="text" name="moz_ita_dl[fs_esr-zip_windows]" 
+value="<?php esc_attr_e( $options['fs_esr-zip_windows'] ); ?>" />
+</td>
+</tr>
+<tr valign="top"><th scope="row">Build Linux</th>
+<td>
+<input id="moz_ita_dl[fs_esr-build_linux]" class="regular-text" type="text" name="moz_ita_dl[fs_esr-build_linux]" 
+value="<?php esc_attr_e( $options['fs_esr-build_linux'] ); ?>" />
+</td>
+</tr>
+<tr valign="top"><th scope="row">Build Linux x64</th>
+<td>
+<input id="moz_ita_dl[fs_esr-build_linux_64]" class="regular-text" type="text" name="moz_ita_dl[fs_esr-build_linux_64]" 
+value="<?php esc_attr_e( $options['fs_esr-build_linux_64'] ); ?>" />
+</td>
+</tr>
+<tr valign="top"><th scope="row">Build Mac OSX</th>
+<td>
+<input id="moz_ita_dl[fs-mac_osx]" class="regular-text" type="text" name="moz_ita_dl[fs_esr-mac_osx]" 
+value="<?php esc_attr_e( $options['fs_esr-mac_osx'] ); ?>" />
 </td>
 </tr>
 </table>
