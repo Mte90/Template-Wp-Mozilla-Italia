@@ -35,6 +35,33 @@ jQuery(document).ready(function() {
 			jQuery('#moz_ita_dl-f_esr-build_linux_64').val('http://download.mozilla.org/?product=firefox-' + data.FIREFOX_ESR + '&os=linux64&lang=it');
 			jQuery('#moz_ita_dl-f_esr-mac_osx').val('http://download.mozilla.org/?product=firefox-' + data.FIREFOX_ESR + '&os=osx&lang=it');
 		});
+		jQuery.getJSON("<? echo get_stylesheet_directory_uri(); ?>/json_proxy.php?type=thunderbird", function(data) {
+			//Thunderbird Stable
+			jQuery('#moz_ita_dl-ts-installer_windows').val('http://download.mozilla.org/?product=thunderbird-' + data.LATEST_THUNDERBIRD_VERSION + '&os=win&lang=it');
+			jQuery('#moz_ita_dl-ts-zip_windows').val('http://sourceforge.net/projects/mozilla-italia/files/Mozilla%20Firefox/26.0/thunderbird-' + data.LATEST_THUNDERBIRD_VERSION + '-it.win32.zip/download');
+			jQuery('#moz_ita_dl-ts-build_linux').val('http://download.mozilla.org/?product=thunderbird-' + data.LLATEST_THUNDERBIRD_VERSION + '&os=linux&lang=it');
+			jQuery('#moz_ita_dl-ts-build_linux_64').val('http://download.mozilla.org/?product=thunderbird-' + data.LATEST_THUNDERBIRD_VERSION + '&os=linux64&lang=it');
+			jQuery('#moz_ita_dl-ts-mac_osx').val('http://download.mozilla.org/?product=thunderbird-' + data.LATEST_THUNDERBIRD_VERSION + '&os=osx&lang=it');
+			jQuery('#moz_ita_dl-ts-langpack').val('http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/' + data.LATEST_THUNDERBIRD_VERSION + '/win32/xpi/it.xpi');
+		});
+		jQuery.ajax({url: '<? echo get_stylesheet_directory_uri(); ?>/json_proxy.php?type=thunderbird-esr',success: function(result) {
+			var t_esr = jQuery(result).find('#it td:nth-child(3)').html();
+			//Thunderbird ESR
+			jQuery('#moz_ita_dl-t_esr-installer_windows').val('http://download.mozilla.org/?product=firefox-' + t_esr + '&os=win&lang=it');
+			jQuery('#moz_ita_dl-t_esr-build_linux').val('http://download.mozilla.org/?product=firefox-' + t_esr + '&os=linux&lang=it');
+			jQuery('#moz_ita_dl-t_esr-build_linux_64').val('http://download.mozilla.org/?product=firefox-' + t_esr + '&os=linux64&lang=it');
+			jQuery('#moz_ita_dl-t_esr-mac_osx').val('http://download.mozilla.org/?product=firefox-' + t_esr + '&os=osx&lang=it');
+		}});
+		jQuery.ajax({url: '<? echo get_stylesheet_directory_uri(); ?>/json_proxy.php?type=seamonkey',success: function(result) {
+			var s = jQuery(result).find('#it .curVersion').html();
+			//Seamonkey
+			jQuery('#moz_ita_dl-s-installer_windows').val('http://download.mozilla.org/?product=seamonkey-' + s + '&os=win&lang=it');
+			jQuery('#moz_ita_dl-s-zip_windows').val('http://ftp.mozilla.org/pub/seamonkey/releases/' + s + '/win32/it/seamonkey-' + s +' .zip');
+			jQuery('#moz_ita_dl-s-build_linux').val('http://download.mozilla.org/?product=seamonkey-' + s + '&os=linux&lang=it');
+			jQuery('#moz_ita_dl-s-build_linux_64').val('http://downloads.sourceforge.net/mozilla-italia/seamonkey-' + s + '.it.linux-x86_64.tar.bz2');
+			jQuery('#moz_ita_dl-s-mac_osx').val('http://download.mozilla.org/?product=seamonkey-' + s + '&os=osx&lang=it');
+			jQuery('#moz_ita_dl-s-langpack').val('http://ftp.mozilla.org/pub/seamonkey/releases/' + s + '/langpack/seamonkey-' + s + '.it.langpack.xpi');
+		}});
 	});
 });
 </script>
@@ -52,9 +79,14 @@ jQuery(document).ready(function() {
 <?php settings_fields( 'moz_ita_dl_group' ); ?>
 <?php $options = get_option( 'moz_ita_dl' ); ?>
 	
-<h3>Firefox Stable</h3>
+<h3>Firefox Stable<span id="firefox"></span></h3>
 
 <table class="form-table">
+<tr valign="top"><th scope="row">Versione</th>
+<td>
+<input id="moz_ita_dl-fs" class="regular-text" type="text" name="moz_ita_dl-fs" value="<?php esc_attr_e( $options['fs'] ); ?>" />
+</td>
+</tr>
 <tr valign="top"><th scope="row">Installer Windows</th>
 <td>
 <input id="moz_ita_dl-fs-installer_windows" class="regular-text" type="text" name="moz_ita_dl-fs-installer_windows" value="<?php esc_attr_e( $options['fs-installer_windows'] ); ?>" />
@@ -93,9 +125,14 @@ jQuery(document).ready(function() {
 </tr>
 </table>
 
-<h3>Firefox ESR</h3>
+<h3>Firefox ESR<span id="firefox-esr"></span></h3>
 
 <table class="form-table">
+<tr valign="top"><th scope="row">Versione</th>
+<td>
+<input id="moz_ita_dl-fesr" class="regular-text" type="text" name="moz_ita_dl-fesr" value="<?php esc_attr_e( $options['fesr'] ); ?>" />
+</td>
+</tr>
 <tr valign="top"><th scope="row">Installer Windows</th>
 <td>
 <input id="moz_ita_dl-f_esr-installer_windows" class="regular-text" type="text" name="moz_ita_dl-f_esr-installer_windows" value="<?php esc_attr_e( $options['f_esr-installer_windows'] ); ?>" />
@@ -122,13 +159,18 @@ jQuery(document).ready(function() {
 </tr>
 </table>
 
-<h3>Thunderbird Stable</h3>
+<h3>Thunderbird Stable<span id="thunderbird"></span></h3>
 
 <table class="form-table">
+<tr valign="top"><th scope="row">Versione</th>
+<td>
+<input id="moz_ita_dl-ts" class="regular-text" type="text" name="moz_ita_dl-ts" value="<?php esc_attr_e( $options['ts'] ); ?>" />
+</td>
+</tr>
 <tr valign="top"><th scope="row">Installer Windows</th>
 <td>
-<input id="moz_ita_dl-fs-installer_windows" class="regular-text" type="text" name="moz_ita_dl-ts-installer_windows" value="<?php esc_attr_e( $options['ts-installer_windows'] ); ?>" />
-<input id="moz_ita_dl-fs-installer_windows-size" class="small-text" type="text" name="moz_ita_dl-ts-installer_windows-size" value="<?php esc_attr_e( $options['ts-installer_windows-size'] ); ?>" />
+<input id="moz_ita_dl-ts-installer_windows" class="regular-text" type="text" name="moz_ita_dl-ts-installer_windows" value="<?php esc_attr_e( $options['ts-installer_windows'] ); ?>" />
+<input id="moz_ita_dl-ts-installer_windows-size" class="small-text" type="text" name="moz_ita_dl-ts-installer_windows-size" value="<?php esc_attr_e( $options['ts-installer_windows-size'] ); ?>" />
 </td>
 </tr>
 <tr valign="top"><th scope="row">Zip Windows</th>
@@ -163,19 +205,18 @@ jQuery(document).ready(function() {
 </tr>
 </table>
 
-<h3>Thunderbird ESR</h3>
+<h3>Thunderbird ESR<span id="thunderbird-esr"></span></h3>
 
 <table class="form-table">
+<tr valign="top"><th scope="row">Versione</th>
+<td>
+<input id="moz_ita_dl-tesr" class="regular-text" type="text" name="moz_ita_dl-tesr" value="<?php esc_attr_e( $options['tesr'] ); ?>" />
+</td>
+</tr>
 <tr valign="top"><th scope="row">Installer Windows</th>
 <td>
 <input id="moz_ita_dl-t_esr-installer_windows" class="regular-text" type="text" name="moz_ita_dl-t_esr-installer_windows" value="<?php esc_attr_e( $options['t_esr-installer_windows'] ); ?>" />
 <input id="moz_ita_dl-t_esr-installer_windows-size" class="small-text" type="text" name="moz_ita_dl-t_esr-installer_windows-size" value="<?php esc_attr_e( $options['t_esr-installer_windows-size'] ); ?>" />
-</td>
-</tr>
-<tr valign="top"><th scope="row">Zip Windows</th>
-<td>
-<input id="moz_ita_dl-t_esr-zip_windows" class="regular-text" type="text" name="moz_ita_dl-t_esr-zip_windows" value="<?php esc_attr_e( $options['t_esr-zip_windows'] ); ?>" />
-<input id="moz_ita_dl-t_esr-zip_windows-size" class="small-text" type="text" name="moz_ita_dl-t_esr-zip_windows-size" value="<?php esc_attr_e( $options['t_esr-zip_windows-size'] ); ?>" />
 </td>
 </tr>
 <tr valign="top"><th scope="row">Build Linux</th>
@@ -198,9 +239,14 @@ jQuery(document).ready(function() {
 </tr>
 </table>
 
-<h3>Seamonkey</h3>
+<h3>Seamonkey<span id="seamonkey"></span></h3>
 
 <table class="form-table">
+<tr valign="top"><th scope="row">Versione</th>
+<td>
+<input id="moz_ita_dl-s" class="regular-text" type="text" name="moz_ita_dl-s" value="<?php esc_attr_e( $options['s'] ); ?>" />
+</td>
+</tr>
 <tr valign="top"><th scope="row">Installer Windows</th>
 <td>
 <input id="moz_ita_dl-s-installer_windows" class="regular-text" type="text" name="moz_ita_dl-s-installer_windows" value="<?php esc_attr_e( $options['s-installer_windows'] ); ?>" />
@@ -239,9 +285,14 @@ jQuery(document).ready(function() {
 </tr>
 </table>
 
-<h3>Lightning</h3>
+<h3>Lightning<span id="lightning"></span></h3>
 
 <table class="form-table">
+<tr valign="top"><th scope="row">Versione</th>
+<td>
+<input id="moz_ita_dl-ls" class="regular-text" type="text" name="moz_ita_dl-ls" value="<?php esc_attr_e( $options['ls'] ); ?>" />
+</td>
+</tr>
 <tr valign="top"><th scope="row">Build Windows</th>
 <td>
 <input id="moz_ita_dl-l-zip_windows" class="regular-text" type="text" name="moz_ita_dl-l-zip_windows" value="<?php esc_attr_e( $options['l-zip_windows'] ); ?>" />
