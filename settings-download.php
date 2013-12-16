@@ -21,59 +21,77 @@ $_REQUEST['settings-updated'] = false;
 <script>
 jQuery(document).ready(function() {
 	jQuery(".load-software").click(function() {
+		function firefox(version){
+			jQuery('#moz_ita_dl-fs').val(version);
+			jQuery('#moz_ita_dl-fs-installer_windows').val('http://download.mozilla.org/?product=firefox-' + version + '&os=win&lang=it');
+			jQuery('#moz_ita_dl-fs-zip_windows').val('http://sourceforge.net/projects/mozilla-italia/files/Mozilla%20Firefox/26.0/firefox-' + version + '-it.win32.zip/download');
+			jQuery('#moz_ita_dl-fs-build_linux').val('http://download.mozilla.org/?product=firefox-' + version + '&os=linux&lang=it');
+			jQuery('#moz_ita_dl-fs-build_linux_64').val('http://download.mozilla.org/?product=firefox-' + version + '&os=linux64&lang=it');
+			jQuery('#moz_ita_dl-fs-mac_osx').val('http://download.mozilla.org/?product=firefox-' + version + '&os=osx&lang=it');
+			jQuery('#moz_ita_dl-fs-langpack').val('http://releases.mozilla.org/pub/mozilla.org/firefox/releases/' + version + '/win32/xpi/it.xpi');
+		}
+		function firefox_esr(version) {
+			jQuery('#moz_ita_dl-fesr').val(version);
+			jQuery('#moz_ita_dl-f_esr-installer_windows').val('http://download.mozilla.org/?product=firefox-' + version + '&os=win&lang=it');
+			jQuery('#moz_ita_dl-f_esr-build_linux').val('http://download.mozilla.org/?product=firefox-' + version + '&os=linux&lang=it');
+			jQuery('#moz_ita_dl-f_esr-build_linux_64').val('http://download.mozilla.org/?product=firefox-' + version + '&os=linux64&lang=it');
+			jQuery('#moz_ita_dl-f_esr-mac_osx').val('http://download.mozilla.org/?product=firefox-' + version + '&os=osx&lang=it');
+		}
+		function thunderbird(version) {
+			jQuery('#moz_ita_dl-ts').val(version);
+			jQuery('#moz_ita_dl-ts-installer_windows').val('http://download.mozilla.org/?product=thunderbird-' + version + '&os=win&lang=it');
+			jQuery('#moz_ita_dl-ts-zip_windows').val('http://sourceforge.net/projects/mozilla-italia/files/Mozilla%20Firefox/26.0/thunderbird-' + version + '-it.win32.zip/download');
+			jQuery('#moz_ita_dl-ts-build_linux').val('http://download.mozilla.org/?product=thunderbird-' + version + '&os=linux&lang=it');
+			jQuery('#moz_ita_dl-ts-build_linux_64').val('http://download.mozilla.org/?product=thunderbird-' + version + '&os=linux64&lang=it');
+			jQuery('#moz_ita_dl-ts-mac_osx').val('http://download.mozilla.org/?product=thunderbird-' + version + '&os=osx&lang=it');
+			jQuery('#moz_ita_dl-ts-langpack').val('http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/' + version + '/win32/xpi/it.xpi');
+		}
+		function thunderbird_esr(version) {
+			jQuery('#moz_ita_dl-tesr').val(version);
+			jQuery('#moz_ita_dl-t_esr-installer_windows').val('http://download.mozilla.org/?product=firefox-' + version + '&os=win&lang=it');
+			jQuery('#moz_ita_dl-t_esr-build_linux').val('http://download.mozilla.org/?product=firefox-' + version + '&os=linux&lang=it');
+			jQuery('#moz_ita_dl-t_esr-build_linux_64').val('http://download.mozilla.org/?product=firefox-' + version + '&os=linux64&lang=it');
+			jQuery('#moz_ita_dl-t_esr-mac_osx').val('http://download.mozilla.org/?product=firefox-' + version + '&os=osx&lang=it');
+		}
+		function seamonkey(version) {
+			jQuery('#moz_ita_dl-s').val(version);
+			jQuery('#moz_ita_dl-s-installer_windows').val('http://download.mozilla.org/?product=seamonkey-' + version + '&os=win&lang=it');
+			jQuery('#moz_ita_dl-s-zip_windows').val('http://ftp.mozilla.org/pub/seamonkey/releases/' + version + '/win32/it/seamonkey-' + s +' .zip');
+			jQuery('#moz_ita_dl-s-build_linux').val('http://download.mozilla.org/?product=seamonkey-' + version + '&os=linux&lang=it');
+			jQuery('#moz_ita_dl-s-build_linux_64').val('http://downloads.sourceforge.net/mozilla-italia/seamonkey-' + version + '.it.linux-x86_64.tar.bz2');
+			jQuery('#moz_ita_dl-s-mac_osx').val('http://download.mozilla.org/?product=seamonkey-' + version + '&os=osx&lang=it');
+			jQuery('#moz_ita_dl-s-langpack').val('http://ftp.mozilla.org/pub/seamonkey/releases/' + version + '/langpack/seamonkey-' + s + '.it.langpack.xpi');
+		}
+		function lightning(version) {
+			jQuery('#moz_ita_dl-l').val(version);
+			jQuery('#moz_ita_dl-l-windows').val('http://ftp.mozilla.org/pub/calendar/lightning/releases/' + version + '/win32/lightning.xpi');
+			jQuery('#moz_ita_dl-l-build_linux').val('http://ftp.mozilla.org/pub/calendar/lightning/releases/' + version + '/linux/lightning.xpi');
+			jQuery('#moz_ita_dl-l-mac_osx').val('http://ftp.mozilla.org/pub/calendar/lightning/releases/' + version + '/mac/lightning.xpi');
+		}
 		jQuery.getJSON("<? echo get_stylesheet_directory_uri(); ?>/json_proxy.php?type=firefox", function(data) {
 			//Firefox Stable
-			jQuery('#moz_ita_dl-fs').val(data.LATEST_FIREFOX_VERSION);
-			jQuery('#moz_ita_dl-fs-installer_windows').val('http://download.mozilla.org/?product=firefox-' + data.LATEST_FIREFOX_VERSION + '&os=win&lang=it');
-			jQuery('#moz_ita_dl-fs-zip_windows').val('http://sourceforge.net/projects/mozilla-italia/files/Mozilla%20Firefox/26.0/firefox-' + data.LATEST_FIREFOX_VERSION + '-it.win32.zip/download');
-			jQuery('#moz_ita_dl-fs-build_linux').val('http://download.mozilla.org/?product=firefox-' + data.LATEST_FIREFOX_VERSION + '&os=linux&lang=it');
-			jQuery('#moz_ita_dl-fs-build_linux_64').val('http://download.mozilla.org/?product=firefox-' + data.LATEST_FIREFOX_VERSION + '&os=linux64&lang=it');
-			jQuery('#moz_ita_dl-fs-mac_osx').val('http://download.mozilla.org/?product=firefox-' + data.LATEST_FIREFOX_VERSION + '&os=osx&lang=it');
-			jQuery('#moz_ita_dl-fs-langpack').val('http://releases.mozilla.org/pub/mozilla.org/firefox/releases/' + data.LATEST_FIREFOX_VERSION + '/win32/xpi/it.xpi');
+			firefox(data.LATEST_FIREFOX_VERSION);
 			//Firefox ESR
-			jQuery('#moz_ita_dl-fesr').val(data.FIREFOX_ESR);
-			jQuery('#moz_ita_dl-f_esr-installer_windows').val('http://download.mozilla.org/?product=firefox-' + data.FIREFOX_ESR + '&os=win&lang=it');
-			jQuery('#moz_ita_dl-f_esr-build_linux').val('http://download.mozilla.org/?product=firefox-' + data.FIREFOX_ESR + '&os=linux&lang=it');
-			jQuery('#moz_ita_dl-f_esr-build_linux_64').val('http://download.mozilla.org/?product=firefox-' + data.FIREFOX_ESR + '&os=linux64&lang=it');
-			jQuery('#moz_ita_dl-f_esr-mac_osx').val('http://download.mozilla.org/?product=firefox-' + data.FIREFOX_ESR + '&os=osx&lang=it');
+			firefox_esr(data.FIREFOX_ESR);
 		});
 		jQuery.getJSON("<? echo get_stylesheet_directory_uri(); ?>/json_proxy.php?type=thunderbird", function(data) {
 			//Thunderbird Stable
-			jQuery('#moz_ita_dl-ts').val(data.LATEST_THUNDERBIRD_VERSION);
-			jQuery('#moz_ita_dl-ts-installer_windows').val('http://download.mozilla.org/?product=thunderbird-' + data.LATEST_THUNDERBIRD_VERSION + '&os=win&lang=it');
-			jQuery('#moz_ita_dl-ts-zip_windows').val('http://sourceforge.net/projects/mozilla-italia/files/Mozilla%20Firefox/26.0/thunderbird-' + data.LATEST_THUNDERBIRD_VERSION + '-it.win32.zip/download');
-			jQuery('#moz_ita_dl-ts-build_linux').val('http://download.mozilla.org/?product=thunderbird-' + data.LATEST_THUNDERBIRD_VERSION + '&os=linux&lang=it');
-			jQuery('#moz_ita_dl-ts-build_linux_64').val('http://download.mozilla.org/?product=thunderbird-' + data.LATEST_THUNDERBIRD_VERSION + '&os=linux64&lang=it');
-			jQuery('#moz_ita_dl-ts-mac_osx').val('http://download.mozilla.org/?product=thunderbird-' + data.LATEST_THUNDERBIRD_VERSION + '&os=osx&lang=it');
-			jQuery('#moz_ita_dl-ts-langpack').val('http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/' + data.LATEST_THUNDERBIRD_VERSION + '/win32/xpi/it.xpi');
+			thunderbird(data.LATEST_THUNDERBIRD_VERSION);
 		});
 		jQuery.ajax({url: '<? echo get_stylesheet_directory_uri(); ?>/json_proxy.php?type=thunderbird-esr',success: function(result) {
 			var t_esr = jQuery(result).find('#it td:nth-child(3)').html();
 			//Thunderbird ESR
-			jQuery('#moz_ita_dl-tesr').val(t_esr);
-			jQuery('#moz_ita_dl-t_esr-installer_windows').val('http://download.mozilla.org/?product=firefox-' + t_esr + '&os=win&lang=it');
-			jQuery('#moz_ita_dl-t_esr-build_linux').val('http://download.mozilla.org/?product=firefox-' + t_esr + '&os=linux&lang=it');
-			jQuery('#moz_ita_dl-t_esr-build_linux_64').val('http://download.mozilla.org/?product=firefox-' + t_esr + '&os=linux64&lang=it');
-			jQuery('#moz_ita_dl-t_esr-mac_osx').val('http://download.mozilla.org/?product=firefox-' + t_esr + '&os=osx&lang=it');
+			thunderbird_esr(t_esr);
 		}});
 		jQuery.ajax({url: '<? echo get_stylesheet_directory_uri(); ?>/json_proxy.php?type=seamonkey',success: function(result) {
 			var s = jQuery(result).find('#it .curVersion').html();
 			//Seamonkey
-			jQuery('#moz_ita_dl-s').val(s);
-			jQuery('#moz_ita_dl-s-installer_windows').val('http://download.mozilla.org/?product=seamonkey-' + s + '&os=win&lang=it');
-			jQuery('#moz_ita_dl-s-zip_windows').val('http://ftp.mozilla.org/pub/seamonkey/releases/' + s + '/win32/it/seamonkey-' + s +' .zip');
-			jQuery('#moz_ita_dl-s-build_linux').val('http://download.mozilla.org/?product=seamonkey-' + s + '&os=linux&lang=it');
-			jQuery('#moz_ita_dl-s-build_linux_64').val('http://downloads.sourceforge.net/mozilla-italia/seamonkey-' + s + '.it.linux-x86_64.tar.bz2');
-			jQuery('#moz_ita_dl-s-mac_osx').val('http://download.mozilla.org/?product=seamonkey-' + s + '&os=osx&lang=it');
-			jQuery('#moz_ita_dl-s-langpack').val('http://ftp.mozilla.org/pub/seamonkey/releases/' + s + '/langpack/seamonkey-' + s + '.it.langpack.xpi');
-		}});
+			seamonkey(s);
+			}});
 		jQuery.ajax({url: '<? echo get_stylesheet_directory_uri(); ?>/json_proxy.php?type=lightning',success: function(result) {
 			var l = jQuery(result).find('.version-number').html();
 			//Lightning
-			jQuery('#moz_ita_dl-l').val(l);
-			jQuery('#moz_ita_dl-l-windows').val('http://ftp.mozilla.org/pub/calendar/lightning/releases/' + l + '/win32/lightning.xpi');
-			jQuery('#moz_ita_dl-l-build_linux').val('http://ftp.mozilla.org/pub/calendar/lightning/releases/' + l + '/linux/lightning.xpi');
-			jQuery('#moz_ita_dl-l-mac_osx').val('http://ftp.mozilla.org/pub/calendar/lightning/releases/' + l + '/mac/lightning.xpi');
+			lightning(l);
 		}});
 	});
 });
@@ -82,7 +100,7 @@ jQuery(document).ready(function() {
 <div class="wrap">
 <?php screen_icon(); echo "<h2>" . get_current_theme() . " Download</h2>"; ?>
 <p class="submit">
-<input type="submit" class="button-primary load-software" value="<?php _e( 'Carica le versioni', 'moz-ita' ); ?>" />
+<input type="submit" class="button-primary load-software" value="<?php _e( 'Carica tutte le versioni', 'moz-ita' ); ?>" />
 </p>
  
 <?php if ( false !== $_REQUEST['settings-updated'] ) : ?>
@@ -350,7 +368,7 @@ jQuery(document).ready(function() {
 </p>
 </form>
 <p class="submit">
-<input type="submit" class="button-primary load-software" value="<?php _e( 'Carica le versioni', 'moz-ita' ); ?>" />
+<input type="submit" class="button-primary load-software" value="<?php _e( 'Carica tutte le versioni', 'moz-ita' ); ?>" />
 </p>
 </div>
 <?php
