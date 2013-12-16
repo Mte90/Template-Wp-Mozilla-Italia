@@ -7,5 +7,7 @@ if($_GET['type'] == 'firefox') {
 	echo file_get_contents('http://www.mozilla.org/en-US/thunderbird/organizations/all-esr.html');
 }elseif($_GET['type'] == 'seamonkey') {
 	echo file_get_contents('http://www.seamonkey-project.org/releases/');
+}elseif($_GET['type'] == 'lightning') {
+	echo file_get_contents('https://addons.mozilla.org/IT/thunderbird/addon/lightning/');
 }
 ?>

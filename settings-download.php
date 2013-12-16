@@ -23,6 +23,7 @@ jQuery(document).ready(function() {
 	jQuery(".load-software").click(function() {
 		jQuery.getJSON("<? echo get_stylesheet_directory_uri(); ?>/json_proxy.php?type=firefox", function(data) {
 			//Firefox Stable
+			jQuery('#moz_ita_dl-fs').val(data.LATEST_FIREFOX_VERSION);
 			jQuery('#moz_ita_dl-fs-installer_windows').val('http://download.mozilla.org/?product=firefox-' + data.LATEST_FIREFOX_VERSION + '&os=win&lang=it');
 			jQuery('#moz_ita_dl-fs-zip_windows').val('http://sourceforge.net/projects/mozilla-italia/files/Mozilla%20Firefox/26.0/firefox-' + data.LATEST_FIREFOX_VERSION + '-it.win32.zip/download');
 			jQuery('#moz_ita_dl-fs-build_linux').val('http://download.mozilla.org/?product=firefox-' + data.LATEST_FIREFOX_VERSION + '&os=linux&lang=it');
@@ -30,6 +31,7 @@ jQuery(document).ready(function() {
 			jQuery('#moz_ita_dl-fs-mac_osx').val('http://download.mozilla.org/?product=firefox-' + data.LATEST_FIREFOX_VERSION + '&os=osx&lang=it');
 			jQuery('#moz_ita_dl-fs-langpack').val('http://releases.mozilla.org/pub/mozilla.org/firefox/releases/' + data.LATEST_FIREFOX_VERSION + '/win32/xpi/it.xpi');
 			//Firefox ESR
+			jQuery('#moz_ita_dl-fesr').val(data.FIREFOX_ESR);
 			jQuery('#moz_ita_dl-f_esr-installer_windows').val('http://download.mozilla.org/?product=firefox-' + data.FIREFOX_ESR + '&os=win&lang=it');
 			jQuery('#moz_ita_dl-f_esr-build_linux').val('http://download.mozilla.org/?product=firefox-' + data.FIREFOX_ESR + '&os=linux&lang=it');
 			jQuery('#moz_ita_dl-f_esr-build_linux_64').val('http://download.mozilla.org/?product=firefox-' + data.FIREFOX_ESR + '&os=linux64&lang=it');
@@ -37,9 +39,10 @@ jQuery(document).ready(function() {
 		});
 		jQuery.getJSON("<? echo get_stylesheet_directory_uri(); ?>/json_proxy.php?type=thunderbird", function(data) {
 			//Thunderbird Stable
+			jQuery('#moz_ita_dl-ts').val(data.LATEST_THUNDERBIRD_VERSION);
 			jQuery('#moz_ita_dl-ts-installer_windows').val('http://download.mozilla.org/?product=thunderbird-' + data.LATEST_THUNDERBIRD_VERSION + '&os=win&lang=it');
 			jQuery('#moz_ita_dl-ts-zip_windows').val('http://sourceforge.net/projects/mozilla-italia/files/Mozilla%20Firefox/26.0/thunderbird-' + data.LATEST_THUNDERBIRD_VERSION + '-it.win32.zip/download');
-			jQuery('#moz_ita_dl-ts-build_linux').val('http://download.mozilla.org/?product=thunderbird-' + data.LLATEST_THUNDERBIRD_VERSION + '&os=linux&lang=it');
+			jQuery('#moz_ita_dl-ts-build_linux').val('http://download.mozilla.org/?product=thunderbird-' + data.LATEST_THUNDERBIRD_VERSION + '&os=linux&lang=it');
 			jQuery('#moz_ita_dl-ts-build_linux_64').val('http://download.mozilla.org/?product=thunderbird-' + data.LATEST_THUNDERBIRD_VERSION + '&os=linux64&lang=it');
 			jQuery('#moz_ita_dl-ts-mac_osx').val('http://download.mozilla.org/?product=thunderbird-' + data.LATEST_THUNDERBIRD_VERSION + '&os=osx&lang=it');
 			jQuery('#moz_ita_dl-ts-langpack').val('http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/' + data.LATEST_THUNDERBIRD_VERSION + '/win32/xpi/it.xpi');
@@ -47,6 +50,7 @@ jQuery(document).ready(function() {
 		jQuery.ajax({url: '<? echo get_stylesheet_directory_uri(); ?>/json_proxy.php?type=thunderbird-esr',success: function(result) {
 			var t_esr = jQuery(result).find('#it td:nth-child(3)').html();
 			//Thunderbird ESR
+			jQuery('#moz_ita_dl-tesr').val(t_esr);
 			jQuery('#moz_ita_dl-t_esr-installer_windows').val('http://download.mozilla.org/?product=firefox-' + t_esr + '&os=win&lang=it');
 			jQuery('#moz_ita_dl-t_esr-build_linux').val('http://download.mozilla.org/?product=firefox-' + t_esr + '&os=linux&lang=it');
 			jQuery('#moz_ita_dl-t_esr-build_linux_64').val('http://download.mozilla.org/?product=firefox-' + t_esr + '&os=linux64&lang=it');
@@ -55,6 +59,7 @@ jQuery(document).ready(function() {
 		jQuery.ajax({url: '<? echo get_stylesheet_directory_uri(); ?>/json_proxy.php?type=seamonkey',success: function(result) {
 			var s = jQuery(result).find('#it .curVersion').html();
 			//Seamonkey
+			jQuery('#moz_ita_dl-s').val(s);
 			jQuery('#moz_ita_dl-s-installer_windows').val('http://download.mozilla.org/?product=seamonkey-' + s + '&os=win&lang=it');
 			jQuery('#moz_ita_dl-s-zip_windows').val('http://ftp.mozilla.org/pub/seamonkey/releases/' + s + '/win32/it/seamonkey-' + s +' .zip');
 			jQuery('#moz_ita_dl-s-build_linux').val('http://download.mozilla.org/?product=seamonkey-' + s + '&os=linux&lang=it');
@@ -62,19 +67,28 @@ jQuery(document).ready(function() {
 			jQuery('#moz_ita_dl-s-mac_osx').val('http://download.mozilla.org/?product=seamonkey-' + s + '&os=osx&lang=it');
 			jQuery('#moz_ita_dl-s-langpack').val('http://ftp.mozilla.org/pub/seamonkey/releases/' + s + '/langpack/seamonkey-' + s + '.it.langpack.xpi');
 		}});
+		jQuery.ajax({url: '<? echo get_stylesheet_directory_uri(); ?>/json_proxy.php?type=lightning',success: function(result) {
+			var l = jQuery(result).find('.version-number').html();
+			//Lightning
+			jQuery('#moz_ita_dl-l').val(l);
+			jQuery('#moz_ita_dl-l-windows').val('http://ftp.mozilla.org/pub/calendar/lightning/releases/' + l + '/win32/lightning.xpi');
+			jQuery('#moz_ita_dl-l-build_linux').val('http://ftp.mozilla.org/pub/calendar/lightning/releases/' + l + '/linux/lightning.xpi');
+			jQuery('#moz_ita_dl-l-mac_osx').val('http://ftp.mozilla.org/pub/calendar/lightning/releases/' + l + '/mac/lightning.xpi');
+		}});
 	});
 });
 </script>
 
 <div class="wrap">
 <?php screen_icon(); echo "<h2>" . get_current_theme() . " Download</h2>"; ?>
+<p class="submit">
+<input type="submit" class="button-primary load-software" value="<?php _e( 'Carica le versioni', 'moz-ita' ); ?>" />
+</p>
  
 <?php if ( false !== $_REQUEST['settings-updated'] ) : ?>
 <div class="updated fade"><p><strong><?php _e( 'Download salvati', 'moz-ita' ); ?></strong></p></div>
 <?php endif; ?>
- <p class="submit">
-<input type="submit" class="button-primary load-software" value="<?php _e( 'Carica le versioni', 'moz-ita' ); ?>" />
-</p>
+
 <form method="post" action="options.php">
 <?php settings_fields( 'moz_ita_dl_group' ); ?>
 <?php $options = get_option( 'moz_ita_dl' ); ?>
@@ -85,6 +99,9 @@ jQuery(document).ready(function() {
 <tr valign="top"><th scope="row">Versione</th>
 <td>
 <input id="moz_ita_dl-fs" class="regular-text" type="text" name="moz_ita_dl-fs" value="<?php esc_attr_e( $options['fs'] ); ?>" />
+<p class="submit">
+<input type="submit" class="button-primary load-ff" value="<?php _e( 'Carica la versione', 'moz-ita' ); ?>" />
+</p>
 </td>
 </tr>
 <tr valign="top"><th scope="row">Installer Windows</th>
@@ -131,6 +148,9 @@ jQuery(document).ready(function() {
 <tr valign="top"><th scope="row">Versione</th>
 <td>
 <input id="moz_ita_dl-fesr" class="regular-text" type="text" name="moz_ita_dl-fesr" value="<?php esc_attr_e( $options['fesr'] ); ?>" />
+<p class="submit">
+<input type="submit" class="button-primary load-fesr" value="<?php _e( 'Carica la versione', 'moz-ita' ); ?>" />
+</p>
 </td>
 </tr>
 <tr valign="top"><th scope="row">Installer Windows</th>
@@ -165,6 +185,9 @@ jQuery(document).ready(function() {
 <tr valign="top"><th scope="row">Versione</th>
 <td>
 <input id="moz_ita_dl-ts" class="regular-text" type="text" name="moz_ita_dl-ts" value="<?php esc_attr_e( $options['ts'] ); ?>" />
+<p class="submit">
+<input type="submit" class="button-primary load-ts" value="<?php _e( 'Carica la versione', 'moz-ita' ); ?>" />
+</p>
 </td>
 </tr>
 <tr valign="top"><th scope="row">Installer Windows</th>
@@ -211,6 +234,9 @@ jQuery(document).ready(function() {
 <tr valign="top"><th scope="row">Versione</th>
 <td>
 <input id="moz_ita_dl-tesr" class="regular-text" type="text" name="moz_ita_dl-tesr" value="<?php esc_attr_e( $options['tesr'] ); ?>" />
+<p class="submit">
+<input type="submit" class="button-primary load-tesr" value="<?php _e( 'Carica la versione', 'moz-ita' ); ?>" />
+</p>
 </td>
 </tr>
 <tr valign="top"><th scope="row">Installer Windows</th>
@@ -245,6 +271,9 @@ jQuery(document).ready(function() {
 <tr valign="top"><th scope="row">Versione</th>
 <td>
 <input id="moz_ita_dl-s" class="regular-text" type="text" name="moz_ita_dl-s" value="<?php esc_attr_e( $options['s'] ); ?>" />
+<p class="submit">
+<input type="submit" class="button-primary load-s" value="<?php _e( 'Carica la versione', 'moz-ita' ); ?>" />
+</p>
 </td>
 </tr>
 <tr valign="top"><th scope="row">Installer Windows</th>
@@ -290,13 +319,16 @@ jQuery(document).ready(function() {
 <table class="form-table">
 <tr valign="top"><th scope="row">Versione</th>
 <td>
-<input id="moz_ita_dl-ls" class="regular-text" type="text" name="moz_ita_dl-ls" value="<?php esc_attr_e( $options['ls'] ); ?>" />
+<input id="moz_ita_dl-l" class="regular-text" type="text" name="moz_ita_dl-ls" value="<?php esc_attr_e( $options['ls'] ); ?>" />
+<p class="submit">
+<input type="submit" class="button-primary load-l" value="<?php _e( 'Carica la versione', 'moz-ita' ); ?>" />
+</p>
 </td>
 </tr>
 <tr valign="top"><th scope="row">Build Windows</th>
 <td>
-<input id="moz_ita_dl-l-zip_windows" class="regular-text" type="text" name="moz_ita_dl-l-zip_windows" value="<?php esc_attr_e( $options['l-zip_windows'] ); ?>" />
-<input id="moz_ita_dl-l-zip_windows-size" class="small-text" type="text" name="moz_ita_dl-l-zip_windows-size" value="<?php esc_attr_e( $options['l-zip_windows-size'] ); ?>" />
+<input id="moz_ita_dl-l-windows" class="regular-text" type="text" name="moz_ita_dl-l-zip_windows" value="<?php esc_attr_e( $options['l-zip_windows'] ); ?>" />
+<input id="moz_ita_dl-l-windows-size" class="small-text" type="text" name="moz_ita_dl-l-zip_windows-size" value="<?php esc_attr_e( $options['l-zip_windows-size'] ); ?>" />
 </td>
 </tr>
 <tr valign="top"><th scope="row">Build Linux</th>
