@@ -9,5 +9,9 @@ if($_GET['type'] == 'firefox') {
 	echo file_get_contents('http://www.seamonkey-project.org/releases/');
 }elseif($_GET['type'] == 'lightning') {
 	echo file_get_contents('https://addons.mozilla.org/IT/thunderbird/addon/lightning/');
+}elseif($_GET['type'] == 'build_firefox') {
+	echo file_get_contents('http://svn.mozilla.org/libs/product-details/json/firefox_primary_builds.json');
+}elseif($_GET['type'] == 'build_thunderbird') {
+	echo file_get_contents('http://svn.mozilla.org/libs/product-details/json/thunderbird_primary_builds.json');
 }
 ?>

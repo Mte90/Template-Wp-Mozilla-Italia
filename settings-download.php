@@ -30,6 +30,15 @@ jQuery(document).ready(function() {
 			jQuery('#moz_ita_dl-fs-mac_osx').val('http://download.mozilla.org/?product=firefox-' + version + '&os=osx&lang=it');
 			jQuery('#moz_ita_dl-fs-langpack').val('http://releases.mozilla.org/pub/mozilla.org/firefox/releases/' + version + '/win32/xpi/it.xpi');
 		}
+		function build_firefox(version){
+			jQuery('#moz_ita_dl-fs').val(version);
+			jQuery('#moz_ita_dl-fs-installer_windows').val('http://download.mozilla.org/?product=firefox-' + version + '&os=win&lang=it');
+			jQuery('#moz_ita_dl-fs-zip_windows').val('http://sourceforge.net/projects/mozilla-italia/files/Mozilla%20Firefox/26.0/firefox-' + version + '-it.win32.zip/download');
+			jQuery('#moz_ita_dl-fs-build_linux').val('http://download.mozilla.org/?product=firefox-' + version + '&os=linux&lang=it');
+			jQuery('#moz_ita_dl-fs-build_linux_64').val('http://download.mozilla.org/?product=firefox-' + version + '&os=linux64&lang=it');
+			jQuery('#moz_ita_dl-fs-mac_osx').val('http://download.mozilla.org/?product=firefox-' + version + '&os=osx&lang=it');
+			jQuery('#moz_ita_dl-fs-langpack').val('http://releases.mozilla.org/pub/mozilla.org/firefox/releases/' + version + '/win32/xpi/it.xpi');
+		}
 		function firefox_esr(version) {
 			jQuery('#moz_ita_dl-fesr').val(version);
 			jQuery('#moz_ita_dl-f_esr-installer_windows').val('http://download.mozilla.org/?product=firefox-' + version + '&os=win&lang=it');
@@ -56,11 +65,11 @@ jQuery(document).ready(function() {
 		function seamonkey(version) {
 			jQuery('#moz_ita_dl-s').val(version);
 			jQuery('#moz_ita_dl-s-installer_windows').val('http://download.mozilla.org/?product=seamonkey-' + version + '&os=win&lang=it');
-			jQuery('#moz_ita_dl-s-zip_windows').val('http://ftp.mozilla.org/pub/seamonkey/releases/' + version + '/win32/it/seamonkey-' + s +' .zip');
+			jQuery('#moz_ita_dl-s-zip_windows').val('http://ftp.mozilla.org/pub/seamonkey/releases/' + version + '/win32/it/seamonkey-' + version +' .zip');
 			jQuery('#moz_ita_dl-s-build_linux').val('http://download.mozilla.org/?product=seamonkey-' + version + '&os=linux&lang=it');
 			jQuery('#moz_ita_dl-s-build_linux_64').val('http://downloads.sourceforge.net/mozilla-italia/seamonkey-' + version + '.it.linux-x86_64.tar.bz2');
 			jQuery('#moz_ita_dl-s-mac_osx').val('http://download.mozilla.org/?product=seamonkey-' + version + '&os=osx&lang=it');
-			jQuery('#moz_ita_dl-s-langpack').val('http://ftp.mozilla.org/pub/seamonkey/releases/' + version + '/langpack/seamonkey-' + s + '.it.langpack.xpi');
+			jQuery('#moz_ita_dl-s-langpack').val('http://ftp.mozilla.org/pub/seamonkey/releases/' + version + '/langpack/seamonkey-' + version + '.it.langpack.xpi');
 		}
 		function lightning(version) {
 			jQuery('#moz_ita_dl-l').val(version);
