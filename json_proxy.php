@@ -17,7 +17,13 @@ if($_GET['type'] == 'firefox') {
 	echo file_get_contents('http://ftp.mozilla.org/pub/mozilla.org/firefox/releases/'.$_GET['version'].'/linux-x86_64/en-US/');
 }elseif($_GET['type'] == 'size_firefox_4') {
 	echo file_get_contents('http://ftp.mozilla.org/pub/mozilla.org/firefox/releases/'.$_GET['version'].'/win32/xpi/');
-}elseif($_GET['type'] == 'size_thunderbird') {
+}elseif($_GET['type'] == 'size_thunderbird_1') {
 	echo file_get_contents('http://svn.mozilla.org/libs/product-details/json/thunderbird_primary_builds.json');
+}elseif($_GET['type'] == 'size_thunderbird_2') {
+	echo file_get_contents('http://sourceforge.net/projects/mozilla-italia/files/Mozilla%20Thunderbird/'.$_GET['version'].'/');
+}elseif($_GET['type'] == 'size_thunderbird_3') {
+	echo file_get_contents('http://ftp.mozilla.org/pub/mozilla.org/thunderbird/releases/'.$_GET['version'].'/linux-x86_64/en-US/');
+}elseif($_GET['type'] == 'size_thunderbird_4') {
+	echo file_get_contents('http://ftp.mozilla.org/pub/mozilla.org/thunderbird/releases/'.$_GET['version'].'/win32/xpi/');
 }
 ?>
