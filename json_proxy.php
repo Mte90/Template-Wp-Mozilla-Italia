@@ -12,7 +12,7 @@ if($_GET['type'] == 'firefox') {
 }elseif($_GET['type'] == 'size_firefox_1') {
 	echo file_get_contents('http://svn.mozilla.org/libs/product-details/json/firefox_primary_builds.json');
 }elseif($_GET['type'] == 'size_firefox_2') {
-	echo file_get_contents('http://sourceforge.net/projects/mozilla-italia/files/Mozilla%20Firefox/26.0/');
+	echo file_get_contents('http://sourceforge.net/projects/mozilla-italia/files/Mozilla%20Firefox/'.$_GET['version'].'/');
 }elseif($_GET['type'] == 'size_thunderbird') {
 	echo file_get_contents('http://svn.mozilla.org/libs/product-details/json/thunderbird_primary_builds.json');
 }

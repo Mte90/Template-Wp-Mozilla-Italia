@@ -36,8 +36,9 @@ function moz_ita_download() {
 						jQuery('#moz_ita_dl-fs-mac_osx-size').val(data.it[ver]['OS X'].filesize);
 						jQuery('#moz_ita_dl-fs-build_linux-size').val(data.it[ver].Linux.filesize);
 					});
-					jQuery.ajax({url: '<? echo get_stylesheet_directory_uri(); ?>/json_proxy.php?type=seamonkey', success: function(data) {
-						jQuery('#moz_ita_dl-fs-zip_windows-size').val(jQuery(data).find('[headers="files_size_h"]').html());
+					jQuery.ajax({url: '<? echo get_stylesheet_directory_uri(); ?>/json_proxy.php?type=size_firefox_2&version=' + ver, success: function(data) {
+						var ver_ = jQuery(data).find('[headers="files_size_h"]').html();
+						jQuery('#moz_ita_dl-fs-zip_windows-size').val(ver_.substr(0 ,ver_.length - 3));
 					}});
 				}
 			}
