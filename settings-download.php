@@ -29,12 +29,16 @@ function moz_ita_download() {
 			}
 			function firefox_size() {
 				var ver = jQuery('#moz_ita_dl-fs').val();
+				var ver_esr = jQuery('#moz_ita_dl-fesr').val();
 				if(ver === '') { alert('Versione non presente'); }
 				else {
 					jQuery.getJSON("<? echo get_stylesheet_directory_uri(); ?>/json_proxy.php?type=size_firefox_1", function(data) {
 						jQuery('#moz_ita_dl-fs-installer_windows-size').val(data.it[ver].Windows.filesize);
 						jQuery('#moz_ita_dl-fs-mac_osx-size').val(data.it[ver]['OS X'].filesize);
 						jQuery('#moz_ita_dl-fs-build_linux-size').val(data.it[ver].Linux.filesize);
+						jQuery('#moz_ita_dl-f_esr-installer_windows-size').val(data.it[ver_esr].Windows.filesize);
+						jQuery('#moz_ita_dl-f_esr-build_linux-size').val(data.it[ver_esr]['OS X'].filesize);
+						jQuery('#moz_ita_dl-f_esr-mac_osx-size').val(data.it[ver_esr].Linux.filesize);
 					});
 					jQuery.ajax({url: '<? echo get_stylesheet_directory_uri(); ?>/json_proxy.php?type=size_firefox_2&version=' + ver, success: function(data) {
 						var ver_ = jQuery(data).find('[headers="files_size_h"]').html();
@@ -45,12 +49,15 @@ function moz_ita_download() {
 						jQuery('#moz_ita_dl-fs-build_linux_64-size').val(jQuery.trim(ver_.substr(0 ,ver_.length - 1)));
 					}});
 					jQuery.ajax({url: '<? echo get_stylesheet_directory_uri(); ?>/json_proxy.php?type=size_firefox_4&version=' + ver, success: function(data) {
-						var ver__ = jQuery(data).find('tbody tr:nth-child(49) td:nth-child(4)').html();
-						jQuery('#moz_ita_dl-fs-langpack-size').val(jQuery.trim(ver__.substr(0 ,ver__.length - 1)));
+						var ver_ = jQuery(data).find('tbody tr:nth-child(49) td:nth-child(4)').html();
+						jQuery('#moz_ita_dl-fs-langpack-size').val(jQuery.trim(ver_.substr(0 ,ver_.length - 1)));
+					}});
+					jQuery.ajax({url: '<? echo get_stylesheet_directory_uri(); ?>/json_proxy.php?type=size_firefox_3&version=' + ver_esr, success: function(data) {
+						var ver_ = jQuery(data).find('tbody tr:nth-child(4) td:nth-child(4)').html();
+						jQuery('#moz_ita_dl-f_esr-build_linux_64-size').val(jQuery.trim(ver_.substr(0 ,ver_.length - 1)));
 					}});
 				}
 			}
-			firefox_size();
 			function firefox_esr(version) {
 				jQuery('#moz_ita_dl-fesr').val(version);
 				jQuery('#moz_ita_dl-f_esr-installer_windows').val('http://download.mozilla.org/?product=firefox-' + version + '&os=win&lang=it');
