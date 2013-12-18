@@ -40,6 +40,14 @@ function moz_ita_download() {
 						var ver_ = jQuery(data).find('[headers="files_size_h"]').html();
 						jQuery('#moz_ita_dl-fs-zip_windows-size').val(ver_.substr(0 ,ver_.length - 3));
 					}});
+					jQuery.ajax({url: '<? echo get_stylesheet_directory_uri(); ?>/json_proxy.php?type=size_firefox_3&version=' + ver, success: function(data) {
+						var ver_ = jQuery(data).find('tbody tr:nth-child(4) td:nth-child(4)').html();
+						jQuery('#moz_ita_dl-fs-build_linux_64-size').val(jQuery.trim(ver_.substr(0 ,ver_.length - 1)));
+					}});
+					jQuery.ajax({url: '<? echo get_stylesheet_directory_uri(); ?>/json_proxy.php?type=size_firefox_4&version=' + ver, success: function(data) {
+						var ver__ = jQuery(data).find('tbody tr:nth-child(49) td:nth-child(4)').html();
+						jQuery('#moz_ita_dl-fs-langpack-size').val(jQuery.trim(ver__.substr(0 ,ver__.length - 1)));
+					}});
 				}
 			}
 			firefox_size();
