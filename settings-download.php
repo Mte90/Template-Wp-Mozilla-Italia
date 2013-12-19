@@ -84,9 +84,18 @@ function moz_ita_download() {
 						var ver_ = jQuery(data).find('tbody tr:nth-child(4) td:nth-child(4)').html();
 						jQuery('#moz_ita_dl-t_esr-build_linux_64-size').val(jQuery.trim(ver_.substr(0 ,ver_.length - 1)));
 					}});
-					/*jQuery('#moz_ita_dl-t_esr-installer_windows-size').val(data.it[ver_esr].Windows.filesize);
-					jQuery('#moz_ita_dl-t_esr-build_linux-size').val(data.it[ver_esr]['OS X'].filesize);
-					jQuery('#moz_ita_dl-t_esr-mac_osx-size').val(data.it[ver_esr].Linux.filesize);*/
+					jQuery.ajax({url: '<? echo get_stylesheet_directory_uri(); ?>/json_proxy.php?type=size_thunderbird_5&version=' + ver_esr, success: function(data) {
+						var ver_ = jQuery(data).find('tbody tr:nth-child(4) td:nth-child(4)').html();
+						jQuery('#moz_ita_dl-t_esr-installer_windows-size').val(jQuery.trim(ver_.substr(0 ,ver_.length - 1)));
+					}});
+					jQuery.ajax({url: '<? echo get_stylesheet_directory_uri(); ?>/json_proxy.php?type=size_thunderbird_6&version=' + ver_esr, success: function(data) {
+						var ver_ = jQuery(data).find('tbody tr:nth-child(4) td:nth-child(4)').html();
+						jQuery('#moz_ita_dl-t_esr-build_linux-size').val(jQuery.trim(ver_.substr(0 ,ver_.length - 1)));
+					}});
+					jQuery.ajax({url: '<? echo get_stylesheet_directory_uri(); ?>/json_proxy.php?type=size_thunderbird_7&version=' + ver_esr, success: function(data) {
+						var ver_ = jQuery(data).find('tbody tr:nth-child(4) td:nth-child(4)').html();
+						jQuery('#moz_ita_dl-t_esr-mac_osx-size').val(jQuery.trim(ver_.substr(0 ,ver_.length - 1)));
+					}});
 				}
 			}
 			function firefox_esr(version) {

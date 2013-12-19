@@ -25,5 +25,11 @@ if($_GET['type'] == 'firefox') {
 	echo file_get_contents('http://ftp.mozilla.org/pub/mozilla.org/thunderbird/releases/'.$_GET['version'].'/linux-x86_64/en-US/');
 }elseif($_GET['type'] == 'size_thunderbird_4') {
 	echo file_get_contents('http://ftp.mozilla.org/pub/mozilla.org/thunderbird/releases/'.$_GET['version'].'/win32/xpi/');
+}elseif($_GET['type'] == 'size_thunderbird_5') {
+	echo file_get_contents('http://ftp.mozilla.org/pub/mozilla.org/thunderbird/releases/'.$_GET['version'].'/win32/it/');
+}elseif($_GET['type'] == 'size_thunderbird_6') {
+	echo file_get_contents('http://ftp.mozilla.org/pub/mozilla.org/thunderbird/releases/'.$_GET['version'].'/linux-i686/it/');
+}elseif($_GET['type'] == 'size_thunderbird_7') {
+	echo file_get_contents('http://ftp.mozilla.org/pub/mozilla.org/thunderbird/releases/'.$_GET['version'].'/mac/it/');
 }
 ?>
