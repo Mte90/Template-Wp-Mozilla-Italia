@@ -41,5 +41,11 @@ if($_GET['type'] == 'firefox') {
 	echo file_get_contents('http://ftp.mozilla.org/pub/mozilla.org/seamonkey/releases/'.$_GET['version'].'/mac/it/');
 }elseif($_GET['type'] == 'size_seamonkey_5') {
 	echo file_get_contents('http://ftp.mozilla.org/pub/mozilla.org/seamonkey/releases/'.$_GET['version'].'/langpack/');
+}elseif($_GET['type'] == 'size_lightning_1') {
+	echo file_get_contents('http://ftp.mozilla.org/pub/calendar/lightning/releases/'.$_GET['version'].'/win32/');
+}elseif($_GET['type'] == 'size_lightning_2') {
+	echo file_get_contents('http://ftp.mozilla.org/pub/calendar/lightning/releases/'.$_GET['version'].'/linux/');
+}elseif($_GET['type'] == 'size_lightning_3') {
+	echo file_get_contents('http://ftp.mozilla.org/pub/calendar/lightning/releases/'.$_GET['version'].'/mac/');
 }
 ?>

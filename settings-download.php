@@ -128,6 +128,24 @@ function moz_ita_download() {
 					}});
 				}
 			}
+			function seamonkey_size() {
+				var ver = jQuery('#moz_ita_dl-l').val();
+				if(ver === '') { alert('Versione non presente'); }
+				else {
+					jQuery.ajax({url: '<? echo get_stylesheet_directory_uri(); ?>/json_proxy.php?type=size_lightning_1&version=' + ver, success: function(data) {
+						var ver_ = jQuery(data).find('tbody tr:nth-child(4) td:nth-child(4)').html();
+						jQuery('#moz_ita_dl-l-windows-size').val(jQuery.trim(ver_.substr(0 ,ver_.length - 1)));
+					}});
+					jQuery.ajax({url: '<? echo get_stylesheet_directory_uri(); ?>/json_proxy.php?type=size_lightning_2&version=' + ver, success: function(data) {
+						var ver_ = jQuery(data).find('tbody tr:nth-child(4) td:nth-child(4)').html();
+						jQuery('#moz_ita_dl-l-build_linux-size').val(ver_.substr(0 ,ver_.length - 1));
+					}});
+					jQuery.ajax({url: '<? echo get_stylesheet_directory_uri(); ?>/json_proxy.php?type=size_lightning_3&version=' + ver, success: function(data) {
+						var ver_ = jQuery(data).find('tbody tr:nth-child(4) td:nth-child(4)').html();
+						jQuery('#moz_ita_dl-l-mac_osx-size').val(jQuery.trim(ver_.substr(0 ,ver_.length - 1)));
+					}});
+				}
+			}
 			function firefox_esr(version) {
 				jQuery('#moz_ita_dl-fesr').val(version);
 				jQuery('#moz_ita_dl-f_esr-installer_windows').val('http://download.mozilla.org/?product=firefox-' + version + '&os=win&lang=it');
