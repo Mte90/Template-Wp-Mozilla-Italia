@@ -98,6 +98,36 @@ function moz_ita_download() {
 					}});
 				}
 			}
+			function seamonkey_size() {
+				var ver = jQuery('#moz_ita_dl-s').val();
+				if(ver === '') { alert('Versione non presente'); }
+				else {
+					jQuery.ajax({url: '<? echo get_stylesheet_directory_uri(); ?>/json_proxy.php?type=size_seamonkey_1&version=' + ver, success: function(data) {
+						var ver_ = jQuery(data).find('tbody tr:nth-child(4) td:nth-child(4)').html();
+						jQuery('#moz_ita_dl-s-installer_windows-size').val(jQuery.trim(ver_.substr(0 ,ver_.length - 1)));
+					}});
+					jQuery.ajax({url: '<? echo get_stylesheet_directory_uri(); ?>/json_proxy.php?type=size_seamonkey_2&version=' + ver, success: function(data) {
+						var ver_ = jQuery(data).find('[headers="files_size_h"]').html();
+						jQuery('#moz_ita_dl-s-zip_windows-size').val(ver_.substr(0 ,ver_.length - 3));
+					}});
+					jQuery.ajax({url: '<? echo get_stylesheet_directory_uri(); ?>/json_proxy.php?type=size_seamonkey_3&version=' + ver, success: function(data) {
+						var ver_ = jQuery(data).find('tbody tr:nth-child(4) td:nth-child(4)').html();
+						jQuery('#moz_ita_dl-s-build_linux-size').val(jQuery.trim(ver_.substr(0 ,ver_.length - 1)));
+					}});
+					jQuery.ajax({url: '<? echo get_stylesheet_directory_uri(); ?>/json_proxy.php?type=size_seamonkey_1&version=' + ver, success: function(data) {
+						var ver_ = jQuery(data).find('tbody tr:nth-child(6) td:nth-child(4)').html();
+						jQuery('#moz_ita_dl-s-build_linux_64-size').val(jQuery.trim(ver_.substr(0 ,ver_.length - 1)));
+					}});
+					jQuery.ajax({url: '<? echo get_stylesheet_directory_uri(); ?>/json_proxy.php?type=size_seamonkey_4&version=' + ver, success: function(data) {
+						var ver_ = jQuery(data).find('tbody tr:nth-child(4) td:nth-child(4)').html();
+						jQuery('#moz_ita_dl-s-mac_osx-size').val(jQuery.trim(ver_.substr(0 ,ver_.length - 1)));
+					}});
+					jQuery.ajax({url: '<? echo get_stylesheet_directory_uri(); ?>/json_proxy.php?type=size_seamonkey_5&version=' + ver, success: function(data) {
+						var ver_ = jQuery(data).find('tbody tr:nth-child(16) td:nth-child(4)').html();
+						jQuery('#moz_ita_dl-s-langpack-size').val(jQuery.trim(ver_.substr(0 ,ver_.length - 1)));
+					}});
+				}
+			}
 			function firefox_esr(version) {
 				jQuery('#moz_ita_dl-fesr').val(version);
 				jQuery('#moz_ita_dl-f_esr-installer_windows').val('http://download.mozilla.org/?product=firefox-' + version + '&os=win&lang=it');
@@ -158,6 +188,7 @@ function moz_ita_download() {
 						var s = jQuery(result).find('#it .curVersion').html();
 						//Seamonkey
 						seamonkey(s);
+						seamonkey_size()
 					}});
 				jQuery.ajax({url: '<? echo get_stylesheet_directory_uri(); ?>/json_proxy.php?type=lightning', success: function(result) {
 						var l = jQuery(result).find('.version-number').html();

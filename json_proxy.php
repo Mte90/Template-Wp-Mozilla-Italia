@@ -31,5 +31,15 @@ if($_GET['type'] == 'firefox') {
 	echo file_get_contents('http://ftp.mozilla.org/pub/mozilla.org/thunderbird/releases/'.$_GET['version'].'/linux-i686/it/');
 }elseif($_GET['type'] == 'size_thunderbird_7') {
 	echo file_get_contents('http://ftp.mozilla.org/pub/mozilla.org/thunderbird/releases/'.$_GET['version'].'/mac/it/');
+}elseif($_GET['type'] == 'size_seamonkey_1') {
+	echo file_get_contents('http://ftp.mozilla.org/pub/mozilla.org/seamonkey/releases/'.$_GET['version'].'/win32/it/');
+}elseif($_GET['type'] == 'size_seamonkey_2') {
+	echo file_get_contents('http://sourceforge.net/projects/mozilla-italia/files/SeaMonkey/'.$_GET['version'].'/');
+}elseif($_GET['type'] == 'size_seamonkey_3') {
+	echo file_get_contents('http://ftp.mozilla.org/pub/mozilla.org/seamonkey/releases/'.$_GET['version'].'/linux-i686/it/');
+}elseif($_GET['type'] == 'size_seamonkey_4') {
+	echo file_get_contents('http://ftp.mozilla.org/pub/mozilla.org/seamonkey/releases/'.$_GET['version'].'/mac/it/');
+}elseif($_GET['type'] == 'size_seamonkey_5') {
+	echo file_get_contents('http://ftp.mozilla.org/pub/mozilla.org/seamonkey/releases/'.$_GET['version'].'/langpack/');
 }
 ?>
